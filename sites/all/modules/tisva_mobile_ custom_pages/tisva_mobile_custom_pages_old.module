@@ -1,0 +1,153 @@
+<?php
+
+  /**
+  * Implement hook_menu().
+  */
+
+  
+  function tisva_mobile_custom_pages_menu() {
+    $items = array();
+
+    $items['load-more-products-ajax'] = array(
+      'title' => 'Load More Products Ajax',
+      'page callback' => 'load_more_products_ajax',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+    
+    $items['get-products-ajax'] = array(
+      'title' => 'Get Products Ajax',
+      'page callback' => 'get_products_ajax',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+    return $items;
+  }
+  
+  function get_products_ajax() {
+    $feature = '';
+    $tech_spec = '';
+    $suit_li = '';
+    $nid = $_POST['nid'];
+    $query = new EntityFieldQuery();
+		$entities = $query->entityCondition('entity_type', 'node')
+			->propertyCondition('nid', $nid)
+			->propertyCondition('status', 1)
+			->execute();
+
+		if (!empty($entities['node'])) {
+			$node = node_load(array_shift(array_keys($entities['node'])));
+		}
+    //echo '<pre>';
+    //print_r($node);
+    //echo '</pre>';
+    //exit;
+    $title = $node->title;
+    $model = $node->model;
+    $price = number_format($node->list_price, 2, '.', '');
+    $desc = $node->body['und'][0]['value'];
+    $image_uri = $node->uc_product_image['und'][0]['uri'];
+		$image_path = file_create_url($image_uri);
+    $material = $node->field_material['und'][0]['value'];
+		$color = $node->field_color['und'][0]['value'];
+		$installation = $node->field_installation['und'][0]['value'];
+		$features = $node->field_features['und'][0]['value'];
+		$tech_specs = $node->field_techincal_spec['und'][0]['value'];
+		$spec_img = file_create_url($node->field_specification_image['und'][0]['uri']);
+    
+    foreach($node->field_spaces_applicable['und'] as $suit) {
+      $suitable_for_tid = $suit['tid'];
+      $result = db_query("SELECT name FROM {taxonomy_term_data} WHERE tid = :arg", array(':arg' => $suitable_for_tid));
+      $result = $result->fetchAssoc();
+      $suitable_for = $result['name'];
+      $suit_image = base_path().'sites/default/files/'.strtolower($suitable_for).'.png';
+      $suit_li .= '<li><span><img src="'.$suit_image.'" alt=""></span><span>'.$suitable_for.'</span></li>';
+    }
+
+    $body = $desc. '<a class="readMore" href="javascript:;">Read More</a><p class="mrp">MRP: <span class="rupees">`</span>'.$price.'</p>';
+    $feature .= '<ul><li>Material<br>'.$material.'</li><li>Color<br>'.$color.'</li><li>Installation<br>'.$installation.'</li>'.strip_tags($features, "<li>").'</ul>';
+		$feature .= '<p class="title">Suitable for</p><ul class="suitableFor">'.$suit_li.'</ul>';
+		
+    if(empty($product->field_related_products)) {
+			$tech_spec .= '<p class="title">The Specifications</p>';
+			if(!empty($node->field_specification_image)) {
+        $tech_spec .= '<div class="imgBox"><img src="'.$spec_img.'" alt=""></div>';
+      }
+			$tech_spec .= str_replace('<ul>', '<ul class="specifications">', $tech_specs);
+		} else {
+			$tech_spec .= '<table class="responsive" width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr class="table_head">
+								<th>ITEM CODE</th>
+								<th>P05612U</th>
+								<th>P05622U</th>
+								<th>P05112U</th>
+								<th>P05122U</th>
+							</tr>
+
+						</tbody>
+					</table>';
+		}
+    
+    $data = array (
+              'nid'   => $nid,
+              'title' => $title,
+              'model' => $model,
+              'body' => $body,
+              'image' => $image_path,
+              'features' => $feature,
+              'tech_specs' => $tech_spec,
+    );
+    echo json_encode($data);
+  }
+  
+  function load_more_products_ajax() {
+    $output = '';
+    $temp = explode('-', $_POST['tnid']);
+    $tid = $temp[0];
+    $nid = $temp[1];
+    $vid = $temp[2];
+    if($vid == 3) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('field_revision_taxonomy_catalog', 'rtc', 'rtc.entity_id = n.nid');
+      $query->leftJoin('field_data_uc_product_image', 'upi', 'upi.entity_id = n.nid');
+      $query->leftJoin('file_managed', 'fm', 'fm.fid = upi.uc_product_image_fid');
+      $query->fields('n', array('nid', 'title', 'created', 'status', 'type'))
+            ->fields('fm', array('uri'))
+            ->condition('n.type', array('product'), 'IN')
+            ->condition('n.status', '1', '=')
+            ->condition('rtc.taxonomy_catalog_tid', $tid, '=')
+            ->condition('n.nid', $nid, '<')
+            ->orderBy('n.created', 'DESC')
+            ->range(0,6);
+      $result = $query->execute();
+    }
+    if($vid == 6) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('field_data_field_spaces_applicable', 'fsa', 'fsa.entity_id = n.nid');
+      $query->leftJoin('field_data_uc_product_image', 'upi', 'upi.entity_id = n.nid');
+      $query->leftJoin('file_managed', 'fm', 'fm.fid = upi.uc_product_image_fid');
+      $query->fields('n', array('nid', 'title', 'created', 'status', 'type'))
+              ->fields('fm', array('uri'))
+              ->condition('n.type', array('product'), 'IN')
+              ->condition('n.status', '1', '=')
+              ->condition('fsa.field_spaces_applicable_tid', $tid, '=')
+              ->condition('n.nid', $nid, '<')
+              ->orderBy('n.created', 'DESC')
+              ->range(0,6);
+      $result = $query->execute();
+    }
+    
+    foreach($result as $row) {
+      $img_path = file_create_url($row->uri);
+      $path = drupal_get_path_alias('node/'.$row->nid);
+      $output .= '<div class="prod_thumb" rel="'.$tid.'-'.$row->nid.'-'.$vid.'">';
+      $output .= '<a href="'.$path.'">';
+      $output .= '<span class="prod_img"><img src="'.$img_path.'" alt="'.$row->title.'"></span>';
+      $output .= '<span class="prod_title">'.$row->title.'</span></a></div>';
+    }
+    echo json_encode($output);
+  }
+

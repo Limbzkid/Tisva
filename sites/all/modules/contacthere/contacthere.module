@@ -1,0 +1,138 @@
+<?php
+
+ /*function contacthere_menu(){
+   $items = array();
+
+   $items['contacthere'] = array(
+     'title'            => t('Hello world'),
+     'page callback'    => 'contacthere_output',
+     'access arguments' => array('access content'),
+   );
+
+   return $items;
+ }
+
+  Display output
+
+ function contacthere_output() {print "fffff";die();
+   header('Content-type: text/plain; charset=UTF-8');
+   header('Content-Disposition: inline');
+   return 'contacthere';
+ }
+
+
+  */
+
+ /**
+ * Implements hook_menu().
+ */
+function contacthere_menu() {
+  $items = array();
+  $items['contacthere'] = array(
+    'title' => 'Custom Login Page',
+    'page callback' => 'contacthere_output',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+/**
+ * Implements hook_theme().
+ */
+function contacthere_theme() {
+  return array(
+    'contacthere' => array(
+      'variables' => array('page' => array()),
+      'template' => 'contacthere', // mylogin.tpl.php in your module folder
+    ),
+  );
+}
+/**
+ * Generate a custom login page
+ * @see more in print_controller_html() in print.pages.inc of the Print module
+ */
+function contacthere_output(){
+
+	if((isset($_POST['username']) && $_POST['username']!='') && (isset($_POST['mobile1']) && $_POST['mobile1']!='') && (isset($_POST['captcha']) && $_POST['captcha']!='') && (isset($_POST['query']) && $_POST['query']!='') && (isset($_POST['query']) && $_POST['query']!='') && (isset($_POST['cpt']) && isset($_POST['cptFlag']) && $_POST['cptFlag']==1 && ($_POST['cpt']== $_POST['captcha'])))
+	{
+		if($_REQUEST['radio']==1)
+			$qt='Product Information';
+		else
+			$qt='Service Request';
+
+		$subject = 'Contact Tisva :' . $qt;
+		$message .= "Query: ".$_REQUEST['query']."\n";
+		$message .= "Mobile: ".$_REQUEST['mobile1']."\n";
+		$message .= "Radio Selection: ".$qt."\n";
+		$message .= "From:".$_REQUEST['username']."\n";
+
+
+		try {
+		$nid = db_insert('contactus')->fields(array(
+		'username' => $_REQUEST['username'],
+		'mobile1' => $_REQUEST['mobile1'],
+		'query' => $_REQUEST['query'],
+		'requesttype' => $_REQUEST['radio'],
+		'querydate' => format_date(time(), 'custom', 'Y-m-d h:i:s'),'subject'=>$subject,
+		))->execute();
+
+		}
+		catch (PDOException $e) {
+			drupal_goto('pagenotfound');
+			//drupal_set_message(t('Error: %message', array('%message' => $e->getMessage())), 'error');
+		}
+
+		//$from=variable_get('site_mail', ini_get('sendmail_from'));
+		//$to= variable_get('site_mail', ini_get('sendmail_from'));
+		/*$headers = "From: " . strip_tags($from) . "\r\n";
+		$headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+		$headers .= "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+		mail($to, $subject, $message, $headers);*/
+        $params['subject'] = t($subject);
+        $params['body']    = array(t($message));
+        global $language;
+        drupal_mail('smtp', 'smtp-test', "customer_care@lifebytisva.com", $language, $params);
+        //drupal_mail('smtp', 'smtp-test', "kanika.aggarwal@fintotal.com", $language, $params);
+	}
+
+	$page = _contacthere_output_prerequisite(); // get/prepare necessary variables, js, css for the page
+    //$page['form'] = drupal_render(drupal_get_form('contact_us')); // get login form
+	 $page['form'] = '';
+    // prepare html in mylogin.tpl.php
+    // See more in print.tpl.php() in the Print module
+    $html = theme('contacthere', array('page' => $page));
+
+    drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+    drupal_send_headers();
+    print $html; // cease Drupal page rendering and render directly to the browser
+
+}
+/**
+ * Prepare the array for the template with common details
+ * @see more _print_var_generator() in print.pages.inc of the Print module
+ */
+function _contacthere_output_prerequisite(){
+    global $base_url, $language;
+    $page = array();
+    $page['language']   = $language->language;
+    $page['head']       = drupal_get_html_head();
+    $page['title']      = '';
+    $page['scripts']    = drupal_get_js();
+    $page['favicon']    = '';
+    // if there is a custom css file for this page
+    // drupal_add_css(drupal_get_path('module', 'contacthere') . '/css/mylogin.css');
+    $page['css'] = drupal_get_css();
+    $page['message'] = drupal_get_messages();
+    $page['footer_scripts'] = drupal_get_js('footer');
+
+    return $page;
+}
+function contacthere_form_submit(&$form, &$form_state) {
+ print "aaaaaaaa";die();print_r($form);
+  print_r($form_state);
+die('My name is ' . $form_state['values']['query']);
+  exit;
+}
+?>

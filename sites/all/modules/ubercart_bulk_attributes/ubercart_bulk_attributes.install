@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function ubercart_bulk_attributes_install() {
+  $spec = array(
+    'description' => 'Affects the list position of the options.',
+    'type' => 'int',
+    'size' => 'normal',
+    'not null' => TRUE,
+    'default' => 0,
+    );
+
+  db_change_field('uc_attribute_options', 'ordering', 'ordering', $spec);
+  db_change_field('uc_product_options', 'ordering', 'ordering', $spec);
+}
+
+/**
+ * Implements hook_schema_alter().
+ */
+function ubercart_bulk_attributes_schema_alter(&$schema) {
+  $spec = array(
+    'description' => 'Affects the list position of the options.',
+    'type' => 'int',
+    'size' => 'normal',
+    'not null' => TRUE,
+    'default' => 0,
+    );
+
+  $schema['uc_attribute_options']['fields']['ordering'] = $spec;
+  $schema['uc_product_options']['fields']['ordering'] = $spec;
+}

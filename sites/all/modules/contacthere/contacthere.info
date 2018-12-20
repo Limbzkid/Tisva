@@ -1,0 +1,5 @@
+name = contacthere
+description = Reinholds Hello World module
+package = Reinholds modules
+core = 7.x
+files[] = contacthere.module

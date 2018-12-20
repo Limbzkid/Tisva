@@ -1,0 +1,142 @@
+<?php
+
+	function tisva_custom_blocks_menu() {
+    $items = array();
+		
+		$items['listProd'] = array(
+      'title' => '',
+      'page callback' => 'listProd',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+    return $items;
+  }
+	
+	function listProd() {
+		variable_del('metatags_quick_default_field_length');
+		$value = serialize(1000);
+    variable_set('metatags_quick_default_field_length', $value);
+		/*global $base_url;
+		$output = '<table><tr><th>Name</th><th>Category1</th><th>Category2</th><th>Category1</th><th>nid</th><th>url</th></tr>';
+		$query = db_select('node', 'n');
+		$query->fields('n', array('nid', 'title', 'created', 'status'))
+					->condition('n.type', array('product'), 'IN')
+					->condition('n.status', 1, '=')
+					->orderBy('n.created', 'ASC');
+		$result = $query->execute();
+		//echo '<pre>';
+		foreach($result as $row) {
+			//print_r($row);
+			$url = drupal_get_path_alias('node/'.$row->nid);
+			$output .= '<tr>
+			              <td>'.$row->title.'</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>'.$row->nid.'</td>
+										<td>'.$url.'</td>
+									</tr>'; 
+		}
+		$output .= '</table>';
+		//echo '</pre>';
+		//exit;
+		return $output;*/
+	}
+
+  function tisva_custom_blocks_block_info() {
+    $blocks['home_page_slider'] = array(
+      'info' => t('Home Page Slider'),
+      'cache' => DRUPAL_NO_CACHE,
+    );
+
+    return $blocks;
+  }
+
+  function tisva_custom_blocks_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+      case 'home_page_slider':
+        $block['subject'] = t('Home Page Slider');
+        $block['content'] = home_page_slider_content();
+        break;
+
+    }
+    return $block;
+  }
+  
+  function home_page_slider_content() {
+    global $base_url;
+    $output = '';
+    $query = db_select('node', 'n');
+    $query->leftjoin('field_data_body', 'fdb', 'fdb.entity_id = n.nid');
+    $query->leftjoin('field_data_field_features', 'ff', 'ff.entity_id = n.nid');
+    $query->leftjoin('field_revision_field_short_title', 'fst', 'fst.entity_id = n.nid');
+    $query->leftjoin('field_data_field_show_on_homepage', 'soh', 'soh.entity_id = n.nid');
+    $query->leftjoin('field_data_field_mobile_front_slider_image', 'fsi', 'fsi.entity_id = n.nid');
+    $query->leftjoin('file_managed', 'fm', 'fm.fid = fsi.field_mobile_front_slider_image_fid');
+		$query->leftjoin('field_data_field_order', 'fo', 'fo.entity_id = n.nid');
+    $query->fields('n', array('nid', 'title'))
+          ->fields('fdb', array('body_value'))
+          ->fields('ff', array('field_features_value'))
+          ->fields('fst', array('field_short_title_value'))
+          ->fields('soh', array('field_show_on_homepage_value'))
+					->fields('fo', array('field_order_value'))
+          ->fields('fm', array('uri'))
+          ->condition('n.type', array('product'), 'IN')
+          ->condition('soh.field_show_on_homepage_value', 1, '=')
+					->orderBy('fo.field_order_value', 'ASC')
+					->range(1,5);
+		//print_r($query->__toString());
+		//exit;
+    $result = $query->execute();
+//    echo '<pre>';
+//		foreach($result as $row) {
+//			echo $row->nid. ' - '. $row->title . '<br/>';
+//		}
+//		echo '</pre>';
+//		exit;
+		$first = true;
+    foreach($result as $row) {
+      $img_root = 'http://www.lightsbytisva.com';
+      $img_path = file_create_url($row->uri);
+      //$img_path = str_replace($base_url, $img_root, $img_path);
+      $output .= '<li class="slide">';
+			$output .= '<div class="imgBox"><img src="'. $img_path .'" alt="'. $row->title .'"></div>';
+			$output .= '<div class="content">';
+			$output .= '<p class="prdTitle '.$row->nid.'">'.$row->title.'</p>';
+			$output .= '<p>' . $row->field_short_title_value . '</p>';
+			/*if($first) {
+				$output .= '<a href="http://www.lightsbytisva.com/offer" target="_blank" class="getMore">Get more!</a>';
+			}*/
+			//if(!$first) {
+				$output .= '<ul class="btns">';
+				$output .= '<li><a href="javascript:;" class="btnInfo">Info</a></li>';
+				$output .= '<li><a href="javascript:;" class="btnFeatures">Features</a></li>';
+				$output .= '</ul>';
+			//}
+			$output .= '</div>';
+			//if(!$first) {
+				$output .= '<div class="infoWrap popup">';
+				$output .= '<a href="javascript:;" class="closeBtn"></a>';
+				$output .= '<p class="prdTitle">'. $row->title .'</p>';
+				$output .= $row->body_value;
+				$output .= '<a href="javascript:;" class="btn">Info</a>';
+				$output .= '</div>';
+				$output .= '<div class="featuresWrap popup">';
+				$output .= '<a href="javascript:;" class="closeBtn"></a>';
+				$output .= '<p class="prdTitle">'. $row->title .'</p>';
+				$output .=  strip_tags($row->field_features_value, '<ul><li>');
+				$output .= '<a href="javascript:;" class="btn">Features</a>';
+				$output .= '</div>';
+			//}
+			$output .= '</li>';
+      $first = false;
+    }
+    return $output;
+  }
+
+
+
+

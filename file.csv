@@ -1,0 +1,440 @@
+Username,Mobile1,Mobile2,City,"Query Type",Subject,Query,"Query Send Date"
+Amruta,9978987979,,,"Service Request","Contact Us",testing,"2014-05-08 08:27:30"
+amruta,9879789789,,,"Product Information","Contact Us",test,"2014-05-08 08:28:52"
+amruta,9879789781,,,"Product Information","Contact Us",test,"2014-05-08 08:28:53"
+amruta,9879789782,,,"Product Information","Contact Us",test,"2014-05-08 08:28:54"
+amruta,9879789783,,,"Product Information","Contact Us",test,"2014-05-08 08:28:56"
+amruta,9879789784,,,"Product Information","Contact Us",test,"2014-05-08 08:28:57"
+amruta,9879789785,,,"Product Information","Contact Us",test,"2014-05-08 08:28:58"
+amruta,9879789786,,,"Product Information","Contact Us",test,"2014-05-08 08:29:00"
+amruta,9879789787,,,"Product Information","Contact Us",test,"2014-05-08 08:29:02"
+amruta,9879789788,,,"Product Information","Contact Us",test,"2014-05-08 08:29:04"
+amruta,9879789789,,,"Product Information","Contact Us",test,"2014-05-08 08:29:06"
+amruta,98797897810,,,"Product Information","Contact Us",test,"2014-05-08 08:29:08"
+amruta,9879789789,,,"Product Information","Contact Us",test,"2014-05-08 08:29:17"
+,9000000004,,Chandigarh,"Product Information","Price Enquiry","Item code: SP1020, Mobile: 9000000004,City: Chandigarh,Enquiry from: http://54.86.39.134/tisva/site/node/194","2014-05-08 08:43:22"
+,9000000005,,Chandigarh,"Product Information","Price Enquiry","Item code: SP3005, Mobile: 9000000005,City: Chandigarh,Enquiry from: http://54.86.39.134/tisva/site/node/194","2014-05-08 08:43:58"
+,9000000008,,Mumbai,"Product Information","Price Enquiry","Item code: AL01306, Mobile: 9000000008,City: Mumbai,Enquiry from: http://54.86.39.134/tisva/site/node/217","2014-05-08 08:46:27"
+,9000000007,,Nasik,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9000000007,City: Nasik,Enquiry from: http://54.86.39.134/tisva/site/node/217","2014-05-08 08:46:59"
+,9000000008,,Maharashtra,"Product Information","Price Enquiry","Item code: AL04274, Mobile: 9000000008,City: Maharashtra,Enquiry from: http://54.86.39.134/tisva/site/node/217","2014-05-08 08:47:43"
+,9333333333,,Ghitorni,"Product Information","Price Enquiry","Item code: AL03305, Mobile: 9333333333,City: Ghitorni,Enquiry from: http://54.86.39.134/tisva/site/node/217","2014-05-08 08:48:11"
+"Attullah Shaikh",9910009160,,,"Product Information","Contact Us",Test,"2014-05-12 05:11:02"
+,9810052368,,Delhi,"Product Information","Price Enquiry","Item code: SL3002, Mobile: 9810052368,City: Delhi,Enquiry from: http://lifebytisva.com/node/175","2014-05-12 08:40:28"
+,9429066085,,Ahmedabad,"Product Information","Price Enquiry","Item code: WP2005, Mobile: 9429066085,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/node/110","2014-05-13 01:25:15"
+,9429066085,,Ahmedabad,"Product Information","Price Enquiry","Item code: SP1001, Mobile: 9429066085,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/node/165","2014-05-13 01:27:24"
+,9910009160,,Delhi,"Product Information","Price Enquiry","Item code: SP1022, Mobile: 9910009160,City: Delhi,Enquiry from: http://www.lifebytisva.com/node/187","2014-05-13 02:55:14"
+,9811532664,,Delhi,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9811532664,City: Delhi,Enquiry from: http://www.lifebytisva.com/node/131","2014-05-13 09:14:03"
+,9545046547,,Pune,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9545046547,City: Pune,Enquiry from: http://lifebytisva.com/node/131","2014-05-13 12:44:06"
+,9923403656,,Pune,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9923403656,City: Pune,Enquiry from: http://lifebytisva.com/node/24","2014-05-14 06:50:43"
+Swati,9999111100,,,"Service Request","Contact Us",Test,"2014-05-14 09:33:41"
+,9999111100,,Delhi,"Product Information","Price Enquiry","Item code: WL1004, Mobile: 9999111100,City: Delhi,Enquiry from: http://lifebytisva.com/node/173","2014-05-14 09:34:18"
+,9818062989,,Ghitorni,"Product Information","Price Enquiry","Item code: SP1021P, Mobile: 9818062989,City: Ghitorni,Enquiry from: http://lifebytisva.com/node/185","2014-05-14 10:09:39"
+,7503206865,,Delhi,"Product Information","Price Enquiry","Item code: SP1018, Mobile: 7503206865,City: Delhi,Enquiry from: http://www.lifebytisva.com/node/184","2014-05-16 02:10:33"
+,9860390404,,Pune,"Product Information","Price Enquiry","Item code: WP2010, Mobile: 9860390404,City: Pune,Enquiry from: http://www.lifebytisva.com/node/252","2014-05-17 01:07:51"
+,9860734344,,Pune,"Product Information","Price Enquiry","Item code: CP5001, Mobile: 9860734344,City: Pune,Enquiry from: http://www.lifebytisva.com/node/53","2014-05-17 04:07:31"
+,9569661128,,Chandigarh,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9569661128,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/node/24","2014-05-17 04:21:45"
+,9426011122,,Ahmedabad,"Product Information","Price Enquiry","Item code: DL1322007, Mobile: 9426011122,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/node/225","2014-05-17 07:33:20"
+,9872400709,,Chandigarh,"Product Information","Price Enquiry","Item code: CP5008, Mobile: 9872400709,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/node/59","2014-05-17 08:58:51"
+,9873081076,,Delhi,"Product Information","Price Enquiry","Item code: WP1021, Mobile: 9873081076,City: Delhi,Enquiry from: http://lifebytisva.com/node/254","2014-05-18 01:25:46"
+,9501102015,,Chandigarh,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9501102015,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/node/131","2014-05-18 08:00:18"
+MONICA,9741255663,,,"Product Information","Contact Us","PANDANTS  ","2014-05-18 10:41:07"
+"Sheetal Thakur",8800092866,,,"Product Information","Contact Us",test,"2014-05-21 11:16:26"
+Sheetal,9540942785,,,"Service Request","Contact Us",Test,"2014-05-21 11:16:53"
+anurekha,8800092866,,,"Service Request","Contact Us",test,"2014-05-21 11:19:10"
+,9654317701,,Delhi,"Product Information","Price Enquiry","Item code: SL1001, Mobile: 9654317701,City: Delhi,Enquiry from: http://lifebytisva.com/led-designer-range/dia-notch-black","2014-05-22 02:08:02"
+"Swati Batheja",9999111100,,,"Product Information","Contact Us",test,"2014-05-22 02:08:51"
+Karthik,8380073934,,,"Service Request","Contact Us","Please help to completely design my Bungalow with Indoor and outdoor lighting. My address is:
+Bungalow No. E-10,
+IVY Villas,
+Kolte-Patil IVY Estate,
+Behind Lexicon School,
+Kesanand Phata,
+Wagholi, Pune","2014-05-22 07:00:09"
+"Abhimanyu Daxini",9725352444,,,"Product Information","Contact Us","I am involved in lighting business in rajkot City in Gujarat. i want information about dealership of USHA Lighting. pls contact me for the same...
+","2014-05-22 07:03:54"
+,9227404041,,Ahmedabad,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9227404041,City: Ahmedabad,Enquiry from: http://lifebytisva.com/utility-range/led-lamps-lx1","2014-05-22 07:06:24"
+,7350606469,,Maharashtra,"Product Information","Price Enquiry","Item code: CP5002, Mobile: 7350606469,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/chandeliers/viscaria-5-lamps","2014-05-22 08:02:49"
+test,9860645491,,,"Product Information","Contact Us",testing,"2014-05-22 09:23:44"
+Test,8888888888,,,"Product Information","Contact Us",Test,"2014-05-22 09:25:21"
+bharti,8800092866,,,"Product Information","Contact Us",test,"2014-05-23 01:20:50"
+bharti,8800092866,,,"Service Request","Contact Us",test,"2014-05-23 01:21:23"
+,8800092866,,Chandigarh,"Product Information","Price Enquiry","Item code: CP5006, Mobile: 8800092866,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/chandeliers/daphne-5-lamps","2014-05-23 01:21:58"
+Swati,9999111100,,,"Product Information","Contact Us",test,"2014-05-23 04:06:37"
+,0830875864,,Pune,"Product Information","Price Enquiry","Item code: SL1003, Mobile: 0830875864,City: Pune,Enquiry from: http://www.lifebytisva.com/led-designer-range/epoche-nea-1-lamp","2014-05-24 12:46:13"
+,8252308077,,Delhi,"Product Information","Price Enquiry","Item code: WP2001, Mobile: 8252308077,City: Delhi,Enquiry from: http://www.lifebytisva.com/wall-lights/le-tulipe-2-lamps","2014-05-27 01:46:50"
+bharti,8800092866,,,"Product Information","Contact Us",test,"2014-05-27 12:29:58"
+Indigo,9820123456,,,"Product Information","Contact Us","this is for testing purpose","2014-05-28 10:50:37"
+"Indigo test",9865321042,,,"Product Information","Contact Us",testing....,"2014-05-28 11:45:25"
+Bharti,8800092866,,,"Service Request","Contact Us","Test call","2014-05-29 01:01:20"
+"AMIT BELADIYA",8000812214,,,"Product Information","Contact Us","I am surat based CA professional. 
+
+I would like to invest in a franchisee of tisva for surat city.
+
+Please let me know if you have any business proposal for surat region.
+
+Thanks,
+Amit
+
+","2014-05-29 01:45:20"
+,9898007431,,Gujarat,"Product Information","Price Enquiry","Item code: WP1021, Mobile: 9898007431,City: Gujarat,Enquiry from: http://www.lifebytisva.com/wall-lights/moda-white","2014-05-29 12:40:01"
+,8800092866,,Delhi,"Product Information","Price Enquiry","Item code: WP1016, Mobile: 8800092866,City: Delhi,Enquiry from: http://www.lifebytisva.com/wall-lights/chiaro-shape-2","2014-05-29 12:54:47"
+"Jitender Vashist",9555262511,,,"Product Information","Contact Us","I want some details about LED strip lights. and what is the coverage range of LED remote?","2014-05-30 03:54:24"
+"GINNI KHOSLA",9999982524,,,"Product Information","Contact Us","pendant lights","2014-05-31 02:55:50"
+,9888433591,,Chandigarh,"Product Information","Price Enquiry","Item code: WP1005, Mobile: 9888433591,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/wall-lights/le-tulipe-2-lamps","2014-06-01 11:36:10"
+,9892465457,,Pune,"Product Information","Price Enquiry","Item code: WP2009, Mobile: 9892465457,City: Pune,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-feyyo-2-lamps","2014-06-03 03:27:49"
+,9420479673,,Pune,"Product Information","Price Enquiry","Item code: CP3003P, Mobile: 9420479673,City: Pune,Enquiry from: http://www.lifebytisva.com/kids-range/rock-and-roll-wall-mounted","2014-06-04 02:06:27"
+,8860042492,,Delhi,"Product Information","Price Enquiry","Item code: WP2008, Mobile: 8860042492,City: Delhi,Enquiry from: http://www.lifebytisva.com/wall-lights/el-coquin-2-lamps","2014-06-04 06:04:44"
+"Jitender Vashist",9555262511,,,"Product Information","Contact Us","What is the warranty of LED STRIPs?","2014-06-04 09:49:19"
+"balchand parayath",9840082857,,,"Product Information","Contact Us","dimensions of your 5 arm chandelier and delivery options. I stay in Chennai.","2014-06-07 05:14:18"
+"Jitender Vashist",7710001935,,,"Service Request","Contact Us",Test,"2014-06-09 03:39:25"
+,8768678678,,Ahmedabad,"Product Information","Price Enquiry","Item code: CP3011, Mobile: 8768678678,City: Ahmedabad,Enquiry from: http://lifebytisva.com/chandeliers/daphne-5-lamps","2014-06-12 05:51:19"
+"Jyoti Kotecha",9820307676,,,"Product Information","Contact Us","testing with gmail","2014-06-12 07:21:14"
+"Jyoti Kotecha",9820307676,,,"Product Information","Contact Us","Testing on 12/6/2014","2014-06-12 11:23:32"
+"Jyoti Kotecha",9820307676,,,"Product Information","Contact Us","Testing on 12/6/2014","2014-06-12 11:26:36"
+"Jyoti Kotecha",9820307676,,,"Product Information","Contact Us","Testing on 12/6/2014","2014-06-12 11:27:05"
+,9891484622,,Delhi,"Product Information","Price Enquiry","Item code: SP1012, Mobile: 9891484622,City: Delhi,Enquiry from: http://lifebytisva.com/pendants/vivace-chrome","2014-06-14 04:14:51"
+,0758714926,,Delhi,"Product Information","Price Enquiry","Item code: SL3001, Mobile: 0758714926,City: Delhi,Enquiry from: http://lifebytisva.com/led-designer-range/sidra","2014-06-15 10:41:41"
+,7587192610,,Delhi,"Product Information","Price Enquiry","Item code: SL3001, Mobile: 7587192610,City: Delhi,Enquiry from: http://lifebytisva.com/led-designer-range/sidra","2014-06-15 10:42:03"
+,0758719261,,Maharashtra,"Product Information","Price Enquiry","Item code: SP1020, Mobile: 0758719261,City: Maharashtra,Enquiry from: http://lifebytisva.com/pendants/encender-1-lamp","2014-06-15 11:37:33"
+,9780023248,,Chandigarh,"Product Information","Price Enquiry","Item code: SP1014, Mobile: 9780023248,City: Chandigarh,Enquiry from: http://lifebytisva.com/pendants/la-passione-white","2014-06-16 03:07:34"
+"Ishant Sharma",9555262511,,,"Product Information","Contact Tisva :Product Information","What is the warranty of LED Lamps?","2014-06-16 05:08:55"
+nizamuddin,8008277214,,,"Product Information","Contact Tisva :Product Information","We require some items for residential purpose for dining/living/bedroom & drawing @ Hyderabad. kindly respond at the earliest.","2014-06-17 04:06:16"
+"Faizal Solkar architect ",9820904718,,,"Product Information","Contact Tisva :Product Information","Item code SP1009 ( vivace) - 8 nos 
+Item code WL1014 (tranquilo)- 2 nos 
+Please quote ur best price
+Thanks 
+","2014-06-19 08:15:02"
+"Test Server",6787686678,,,"Product Information","Contact Tisva :Product Information",test,"2014-06-20 02:43:20"
+Test,6876876786,,,"Product Information","Contact Tisva :Product Information","Test Server","2014-06-20 03:40:38"
+test,6557657575,,,"Product Information","Contact Tisva :Product Information",bnvbnvbnvbnbn,"2014-06-20 03:56:07"
+Test,8787977897,,,"Product Information","Contact Tisva :Product Information",Test,"2014-06-20 03:57:50"
+"Jyoti Kotecha",9820307676,,,"Product Information","Contact Tisva :Product Information","Final test","2014-06-20 04:10:18"
+ada,9004079456,,,"Product Information","Contact Tisva :Product Information",adaasas,"2014-06-20 11:29:31"
+dsds,9004079456,,,"Product Information","Contact Tisva :Product Information",sdssds,"2014-06-20 11:30:10"
+"Ashok Vantair",9963310400,,,"Service Request","Contact Tisva :Service Request","pl provide the e-mail id of Head of Marketing","2014-06-22 06:25:23"
+,9730761835,,Maharashtra,"Product Information","Price Enquiry","Item code: SP1001, Mobile: 9730761835,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-1-lamp-purple","2014-06-23 01:57:35"
+kanika,9987671787,,,"Service Request","Contact Tisva :Service Request",Test,"2014-06-23 02:00:54"
+chris,1371177894,,,"Product Information","Contact Tisva :Product Information","Dear  i like your CP5004 a lot. would you pls quote your best price for that. I also live in Guangzhou, i could arrange delivery by my side.
+thx","2014-06-23 08:31:51"
+,5757756576,,Chandigarh,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 5757756576,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-strips-luce-rgb","2014-06-24 01:28:08"
+,9879610170,,Ahmedabad,"Product Information","Price Enquiry","Item code: SP4002, Mobile: 9879610170,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/pendants/neo-moda-white","2014-06-24 07:10:27"
+,9743070000,,Maharashtra,"Product Information","Price Enquiry","Item code: SP1001, Mobile: 9743070000,City: Maharashtra,Enquiry from: http://lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-06-24 08:35:24"
+,9342434567,,Pune,"Product Information","Price Enquiry","Item code: SL1001, Mobile: 9342434567,City: Pune,Enquiry from: http://www.lifebytisva.com/led-designer-range/dia-notch-black","2014-06-26 11:57:21"
+,8087031207,,Pune,"Product Information","Price Enquiry","Item code: SQ1004P, Mobile: 8087031207,City: Pune,Enquiry from: http://www.lifebytisva.com/kids-range/vroom","2014-06-30 03:25:57"
+CHANDRASHEKAR,9885012513,,,"Product Information","Contact Tisva :Product Information"," Hi, we would like to know more about your product and would appreciate if u can send or mail me  a    detailed catalogues or Brouchers of your product and services....  we are an interior Design firm company Based in Hyderabad.
+","2014-07-04 03:01:23"
+CHANDRASHEKAR,9885012513,,,"Product Information","Contact Tisva :Product Information"," Hi, we would like to know more about your product and would appreciate if u can send or mail me  a    detailed catalogues or Brouchers of your product and services....  we are an interior Design firm company Based in Hyderabad.
+","2014-07-04 03:01:43"
+CHANDRASHEKAR,9885012513,,,"Product Information","Contact Tisva :Product Information"," Hi, we would like to know more about your product and would appreciate if u can send or mail me  a    detailed catalogues or Brouchers of your product and services....  we are an interior Design firm company Based in Hyderabad.
+","2014-07-04 03:01:51"
+"swati tyagi",9899590889,,,"Product Information","Contact Tisva :Product Information","about product","2014-07-12 03:15:24"
+,9999992070,,Ahmedabad,"Product Information","Price Enquiry","Item code: SQ1003P, Mobile: 9999992070,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/kids-range/chopper","2014-07-15 01:31:30"
+Mohan,0987222368,,,"Service Request","Contact Tisva :Service Request","Hi,
+
+I am Mohan from www.muktistudios.com we have done couple of tv commercial for the same business. Please let me know when we can have a meeting?
+
+Kindly check some of our work here 
+https://www.facebook.com/creativity.at.muktistudios
+
+
+Regards","2014-07-16 07:42:58"
+mohan,9872223687,,,"Service Request","Contact Tisva :Service Request","Hi,
+
+I am Mohan from www.muktistudios.com we have done couple of tv commercial for the same business. Please let me know when we can have a meeting?
+
+Kindly check some of our work here 
+https://www.facebook.com/creativity.at.muktistudios
+
+
+Regards","2014-07-16 07:43:31"
+,9823485988,,Ahmedabad,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9823485988,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-07-20 01:35:45"
+"Rohit Sood",9878526083,,,"Product Information","Contact Tisva :Product Information","Dear Sir/Madam
+
+I want to open a Light showroom in Ludhiana area of Punjab India. I came to know about your lights collection and interested in having the benefit of your experience in the said field through your franchise in Ludhiana.","2014-07-23 09:31:41"
+"Rohit Sood",9878526083,,,"Product Information","Contact Tisva :Product Information","Dear Sir/Madam
+
+I want to open a Light showroom in Ludhiana area of Punjab India. I came to know about your lights collection and interested in having the benefit of your experience in the said field through your franchise in Ludhiana.","2014-07-23 09:32:30"
+"Rohit Sood",9878526083,,,"Product Information","Contact Tisva :Product Information","Dear Sir/Madam
+
+I want to open a Light showroom in Ludhiana area of Punjab India. I came to know about your lights collection and interested in having the benefit of your experience in the said field through your franchise in Ludhiana.","2014-07-23 09:35:25"
+"Rohit Sood",9878526083,,,"Service Request","Contact Tisva :Service Request","Dear Sir/Madam
+
+I want to open a Light showroom in Ludhiana area of Punjab India. I came to know about your lights collection and interested in having the benefit of your experience in the said field through your franchise in Ludhiana.","2014-07-23 09:36:10"
+,9731103475,,Ahmedabad,"Product Information","Price Enquiry","Item code: FL1001P, Mobile: 9731103475,City: Ahmedabad,Enquiry from: http://lifebytisva.com/kids-range/halftime","2014-07-25 08:38:53"
+,9810187775,,Ahmedabad,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9810187775,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-07-26 01:07:15"
+,9810187775,,Ahmedabad,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9810187775,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-07-26 01:07:17"
+,8939412666,,Ahmedabad,"Product Information","Price Enquiry","Item code: CP5002, Mobile: 8939412666,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/chandeliers/viscaria-5-lamps","2014-07-26 04:56:20"
+,8939412666,,Ahmedabad,"Product Information","Price Enquiry","Item code: WP1007, Mobile: 8939412666,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-hester-1-lamp","2014-07-26 04:57:13"
+,8939412666,,Ahmedabad,"Product Information","Price Enquiry","Item code: SP3001, Mobile: 8939412666,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-07-26 04:57:49"
+,8939412666,,Ahmedabad,"Product Information","Price Enquiry","Item code: AL03305, Mobile: 8939412666,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-4","2014-07-26 04:59:06"
+"SANDEEP SIKARIA",9830475215,,,"Product Information","Contact Tisva :Product Information","please send us a softcopy of your products. We are going to start an exclusive showroom of lights in calcutta in prime location. ","2014-07-26 09:54:59"
+"sandeep sikaria",9830475215,,,"Product Information","Contact Tisva :Product Information","please send us a softcopy of your products. We are going to start an exclusive showroom of lights in calcutta in prime location. ","2014-07-26 09:55:40"
+"Dr. Y. V. SUBBA RAO",0944418733,,,"Product Information","Contact Tisva :Product Information","Sirs,
+I need two nos. chandeliers CP5002 5 HEAD CHANDELIER / 
+BRASS / 11 WATT / CAP ES27 3. VISCARIA or CP5001 5 HEAD CHANDELIER / 
+BRASS / 9 WATT / CAP ES14
+1. TULIPE. Kindly let me know the maximum discounted price of both the models. Pl. Send mail.","2014-07-27 11:11:58"
+"SAN ELECTRICALS",9884037888,,,"Product Information","Contact Tisva :Product Information","DEALER SHIP","2014-07-28 08:50:16"
+,9090016134,,Ahmedabad,"Product Information","Price Enquiry","Item code: WL1012, Mobile: 9090016134,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/led-designer-range/angelica","2014-08-01 03:57:53"
+,9949494949,,Ahmedabad,"Product Information","Price Enquiry","Item code: WP2003, Mobile: 9949494949,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/wall-lights/arancino-2-lamps","2014-08-02 06:13:00"
+,9949494919,,Ahmedabad,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9949494919,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-strips-luce-rgb","2014-08-02 06:20:17"
+"Madhav Kota",8008200300,,,"Product Information","Contact Tisva :Product Information","Please ask your corporate sales person to contact me..Thanks and regards..","2014-08-04 03:54:09"
+,7503206865,,Ahmedabad,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 7503206865,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-08-07 05:17:24"
+Hardaman,9811077209,,,"Product Information","Contact Tisva :Product Information","Need info on LED strip light range","2014-08-20 01:00:19"
+,8130696273,,Ahmedabad,"Product Information","Price Enquiry","Item code: SP3005, Mobile: 8130696273,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/pendants/encender-3-lamps","2014-08-22 03:50:55"
+,9924136860,,Ahmedabad,"Product Information","Price Enquiry","Item code: UF7004, Mobile: 9924136860,City: Ahmedabad,Enquiry from: http://lifebytisva.com/node/325","2014-08-23 06:43:52"
+"Nikhil Narang ",0981831890,,,"Product Information","Contact Tisva :Product Information","M/S Ankit Electricals Private Limited 
+1809 Ist floor Bhagirath place 
+New Delhi -06 
+","2014-08-26 02:40:53"
+bhavuk,9540845584,,,"Product Information","Contact Tisva :Product Information","Test request","2014-08-28 03:03:08"
+bhavuk,9540845584,,,"Service Request","Contact Tisva :Service Request","test ","2014-08-28 03:04:10"
+Bhavuk,9540845584,,,"Service Request","Contact Tisva :Service Request",test,"2014-08-28 03:22:35"
+test,1231231231,,,"Product Information","Contact Tisva :Product Information",test,"2014-09-01 01:10:08"
+kaia,3453554235,,,"Product Information","Contact Tisva :Product Information",fssfs,"2014-09-01 07:01:41"
+prajakta,9800000000,,,"Product Information","Contact Tisva :Product Information",test,"2014-09-01 12:10:10"
+test,1234567890,,,"Product Information","Contact Tisva :Product Information",test,"2014-09-01 12:28:28"
+"test tryer",1212121212,,,"Product Information","Contact Tisva :Product Information","details ","2014-09-02 01:12:17"
+"test tertet",2121212121,,,"Product Information","Contact Tisva :Product Information",sdfsdfsdfdsf,"2014-09-02 01:14:13"
+test,1234567890,,,"Product Information","Contact Tisva :Product Information",tesr,"2014-09-02 01:15:20"
+"test tertet",2121212121,,,"Product Information","Contact Tisva :Product Information",sdfsdfsdfdsf,"2014-09-02 01:16:17"
+"Sunil Limboo",9876543210,,,"Product Information","Contact Tisva :Product Information","mail test","2014-09-02 01:44:39"
+"Sunil Limboo",9876543210,,,"Product Information","Contact Tisva :Product Information","sdasdasd Test","2014-09-02 02:49:40"
+"Sunil Limboo",9876543210,,,"Product Information","Contact Tisva :Product Information","sdasdasd Test","2014-09-02 02:52:46"
+"Sunil Limboo",9876543210,,,"Product Information","Contact Tisva :Product Information","Mail Tesr","2014-09-02 02:54:39"
+tetet,1212121212,,,"Product Information","Contact Tisva :Product Information",dfsdfsdf,"2014-09-02 02:55:12"
+"Sunil Limboo",9876543210,,,"Product Information","Contact Tisva :Product Information","mail Test","2014-09-02 03:17:13"
+"Sunil Limboo",9876543210,,,"Product Information","Contact Tisva :Product Information","Mail Test","2014-09-02 03:22:28"
+"Sunil Limboo",9876543210,,,"Product Information","Contact Tisva :Product Information","Test Mail","2014-09-02 03:37:06"
+asasd,9999999999,,,"Product Information","Contact Tisva :Product Information",asdasdasd,"2014-09-02 11:15:13"
+Test,1234567890,,,"Product Information","Contact Tisva :Product Information",testing,"2014-09-02 12:19:02"
+kk,3434343343,,,"Product Information","Contact Tisva :Product Information",bnbnbn,"2014-09-02 12:20:11"
+testing,1234567788,,,"Product Information","Contact Tisva :Product Information","test details","2014-09-02 12:20:19"
+tester,1212121212,,,"Service Request","Contact Tisva :Service Request",1234,"2014-09-02 12:21:02"
+tester,1212121212,,,"Service Request","Contact Tisva :Service Request",1234,"2014-09-02 12:39:31"
+kk,3433434467,,,"Product Information","Contact Tisva :Product Information",bmnbmnbmnbmnbmn,"2014-09-02 12:40:53"
+hgjhghjg,1231321313,,,"Product Information","Contact Tisva :Product Information","gfsdghafshdg ","2014-09-02 12:42:10"
+kghnbn,8787878788,,,"Product Information","Contact Tisva :Product Information",nbmnbmnbm,"2014-09-02 12:42:46"
+bhavuk,9540845584,,,"Product Information","Contact Tisva :Product Information",Test,"2014-09-03 10:48:54"
+Bhavuk,9540845584,,,"Service Request","Contact Tisva :Service Request",Test,"2014-09-03 10:49:28"
+"DEEPAK SHARMA",7503206865,,,"Product Information","Contact Tisva :Product Information","WOULD LIKE TO PLACE AN ORDER OF CHANDELIERS ","2014-09-04 02:56:37"
+,9825042724,,Ahmedabad,"Product Information","Price Enquiry","Item code: WL1012, Mobile: 9825042724,City: Ahmedabad,Enquiry from: http://lifebytisva.com/led-designer-range/angelica","2014-09-10 12:57:24"
+,0982504272,,Ahmedabad,"Product Information","Price Enquiry","Item code: WL1012, Mobile: 0982504272,City: Ahmedabad,Enquiry from: http://lifebytisva.com/led-designer-range/angelica","2014-09-10 12:57:53"
+,9958005199,,Ahmedabad,"Product Information","Price Enquiry","Item code: WP1009, Mobile: 9958005199,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/wall-ligths/eva-rethmos-1-lamp","2014-09-11 12:01:52"
+"mukesh johare",9930816397,,,"Service Request","Contact Tisva :Service Request","Hello, 
+
+Greetings from IndusInd Bank!!
+
+We would be glad to promote & Advertise Offers by Tisva to our premium credit card customer base.
+
+IndusInd Cards Division caters to group of people of SEC A+ A, B premium segment across. It is a heritage of","2014-09-17 02:28:48"
+"virender kumar",9766627487,,,"Service Request","Contact Tisva :Service Request","interested in joininng your cmpany cuurantly working as area manager in osram in pune.","2014-09-17 12:55:02"
+,8427400057,,Punjab,"Product Information","Price Enquiry","Item code: FT28002BU, Mobile: 8427400057,City: Punjab,Enquiry from: http://www.lifebytisva.com/utility-range/t5-battern","2014-09-21 04:51:49"
+,9569661128,,Chandigarh,"Product Information","Price Enquiry","Item code: WP2005, Mobile: 9569661128,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-bella-2-lamps","2014-09-27 10:52:31"
+"Biju Sekharan",9820377961,,,"Product Information","Contact Tisva :Product Information","From Piramal Realty coming up with residential project at Mumbai. Looking for Lights Products to suite our requirenment.","2014-09-30 01:57:14"
+,9423732864,,Pune,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9423732864,City: Pune,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-06 01:03:11"
+,9818449222,,Delhi,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 9818449222,City: Delhi,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-10-06 02:07:25"
+,9426180550,,Ahmedabad,"Product Information","Price Enquiry","Item code: HL2001, Mobile: 9426180550,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-06 03:29:22"
+,9049003477,,Pune,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9049003477,City: Pune,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-06 06:31:07"
+,7073333068,,Chennai,"Product Information","Price Enquiry","Item code: CP5004, Mobile: 7073333068,City: Chennai,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-10-06 07:04:07"
+,9923234747,,Maharashtra,"Product Information","Price Enquiry","Item code: AL03305, Mobile: 9923234747,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-06 08:39:01"
+,9490442997,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5002, Mobile: 9490442997,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/viscaria-5-lamps","2014-10-06 08:49:09"
+,9441322228,,Hyderabad,"Product Information","Price Enquiry","Item code: WP2010, Mobile: 9441322228,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/wall-lights/lynnea-1-lamp","2014-10-06 09:03:56"
+,9689931171,,Pune,"Product Information","Price Enquiry","Item code: CP5003, Mobile: 9689931171,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/hester-5-lamps","2014-10-06 09:13:26"
+"ADITYA KUMAR BHANDARI",9650912285,,,"Service Request","Contact Tisva :Service Request","IN Respect Life By Tisva Sir, I DIDN't GET UR RESPONSE, 
+
+ANY JOB - New Website or Re-Design on Freelance Basis Recommend Me
+
+It Will Be a Favor! 
+
+Freelancer 
+
+Model / Actor Negative Shade - Dress Code Reid & Taylor / Web-Designer - AKB
+
+","2014-10-06 10:30:19"
+"yash pal",9891395912,,,"Product Information","Contact Tisva :Product Information","Price of candlier of 5 heads","2014-10-06 11:18:38"
+,9391152246,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5001, Mobile: 9391152246,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/tulipe-5-lamps","2014-10-06 12:03:29"
+,9999001787,,Noida,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9999001787,City: Noida,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-strips-luce-rgb","2014-10-07 02:19:33"
+,9914222788,,Punjab,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9914222788,City: Punjab,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-strips-luce-rgb","2014-10-07 05:02:48"
+,9910203301,,Gurgaon,"Product Information","Price Enquiry","Item code: WP1006, Mobile: 9910203301,City: Gurgaon,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-viscaria","2014-10-07 07:31:20"
+"Sameer Kapoor",9810999868,,,"Product Information","Contact Tisva :Product Information","I would like to apply for a senior management position in this esteemed organisation for a position in sales,retail,Buisness development","2014-10-07 07:34:02"
+,9650435323,,Noida,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9650435323,City: Noida,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-strips-luce-rgb","2014-10-07 10:38:26"
+"Aman Bikram Shah",9871950890,,,"Product Information","Contact Tisva :Product Information","We are a digital Media agency - Cogdigital. Would want to get in touch with the marketing head to propose a devised strategy further. Please get in touch at 9871950890 or via email at aman@cogdigital.com","2014-10-07 11:24:36"
+,9953154936,,Delhi,"Product Information","Price Enquiry","Item code: SL3001, Mobile: 9953154936,City: Delhi,Enquiry from: http://www.lifebytisva.com/led-designer-range/sidra","2014-10-08 01:27:28"
+,9818368173,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: CP5002, Mobile: 9818368173,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/chandeliers/viscaria-5-lamps","2014-10-09 05:28:01"
+,9022041886,,Mumbai,"Product Information","Price Enquiry","Item code: SL3001, Mobile: 9022041886,City: Mumbai,Enquiry from: http://www.lifebytisva.com/led-designer-range/sidra","2014-10-09 05:28:56"
+,9990867100,,Delhi,"Product Information","Price Enquiry","Item code: SL3002, Mobile: 9990867100,City: Delhi,Enquiry from: http://www.lifebytisva.com/led-designer-range/epoche-nea-1-lamp","2014-10-10 02:53:13"
+,9811283736,,Delhi,"Product Information","Price Enquiry","Item code: CQ3001P, Mobile: 9811283736,City: Delhi,Enquiry from: http://www.lifebytisva.com/kids-range/gloworm-wall-mounted","2014-10-11 03:12:44"
+,9811041999,,Noida,"Product Information","Price Enquiry","Item code: WP1011, Mobile: 9811041999,City: Noida,Enquiry from: http://www.lifebytisva.com/wall-lights/la-enchante-1-lamp","2014-10-11 08:12:56"
+,9999132970,,Delhi,"Product Information","Price Enquiry","Item code: WP2008, Mobile: 9999132970,City: Delhi,Enquiry from: http://www.lifebytisva.com/wall-lights/el-coquin-2-lamps","2014-10-12 01:18:05"
+,9810628083,,Gurgaon,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9810628083,City: Gurgaon,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-strips-luce-rgb","2014-10-12 10:55:12"
+"inderjeet singh",9650746721,,,"Product Information","Contact Tisva :Product Information",chandeliers,"2014-10-12 12:35:04"
+,9000344431,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5004, Mobile: 9000344431,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-10-16 12:31:45"
+,9918396972,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: HL3001, Mobile: 9918396972,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-3-lamps","2014-10-17 02:00:17"
+,9810852136,,Gurgaon,"Product Information","Price Enquiry","Item code: WP2009, Mobile: 9810852136,City: Gurgaon,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-feyyo-2-lamps","2014-10-17 05:24:22"
+,9426302588,,Gujarat,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9426302588,City: Gujarat,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-17 06:31:15"
+,9999066699,,Delhi,"Product Information","Price Enquiry","Item code: CP5004, Mobile: 9999066699,City: Delhi,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-10-19 03:13:56"
+,8447207520,,Noida,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 8447207520,City: Noida,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-19 04:33:49"
+,9779904252,,Chandigarh,"Product Information","Price Enquiry","Item code: WQ1001P, Mobile: 9779904252,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/kids-range/gloworm-wall-mounted","2014-10-19 10:59:34"
+,8458807072,,Maharashtra,"Product Information","Price Enquiry","Item code: SP3002, Mobile: 8458807072,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-10-19 12:10:59"
+,9821380799,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5001, Mobile: 9821380799,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/tulipe-5-lamps","2014-10-20 09:39:45"
+,9732888861,,Delhi,"Product Information","Price Enquiry","Item code: HL1001, Mobile: 9732888861,City: Delhi,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-21 03:35:21"
+,9881236500,,Pune,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9881236500,City: Pune,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-21 04:36:49"
+,9881236500,,Pune,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9881236500,City: Pune,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-21 04:36:49"
+,9888008887,,Chandigarh,"Product Information","Price Enquiry","Item code: SL1001, Mobile: 9888008887,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/led-designer-range/dia-notch-black","2014-10-21 05:01:15"
+,9888008887,,Chandigarh,"Product Information","Price Enquiry","Item code: SP1013, Mobile: 9888008887,City: Chandigarh,Enquiry from: http://www.lifebytisva.com/pendants/la-passione-black","2014-10-21 05:23:42"
+,9730891812,,Pune,"Product Information","Price Enquiry","Item code: CP3007, Mobile: 9730891812,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/arancino-3-lamps","2014-10-21 08:26:15"
+,1234567890,,Pune,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 1234567890,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-10-21 11:24:34"
+,9840989898,,Chennai,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9840989898,City: Chennai,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-21 12:17:29"
+,9403808222,,Maharashtra,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9403808222,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-22 01:20:17"
+,9328465366,,Gujarat,"Product Information","Price Enquiry","Item code: CP5001, Mobile: 9328465366,City: Gujarat,Enquiry from: http://www.lifebytisva.com/chandeliers/tulipe-5-lamps","2014-10-22 01:21:18"
+,9858968695,,Mumbai,"Product Information","Price Enquiry","Item code: CQ3001P, Mobile: 9858968695,City: Mumbai,Enquiry from: http://www.lifebytisva.com/kids-range/gloworm-ceiling-mounted","2014-10-22 01:33:43"
+,9665925729,,Maharashtra,"Product Information","Price Enquiry","Item code: CP3007, Mobile: 9665925729,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/chandeliers/arancino-3-lamps","2014-10-22 02:03:20"
+,9665925729,,Maharashtra,"Product Information","Price Enquiry","Item code: CP3007, Mobile: 9665925729,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/chandeliers/arancino-3-lamps","2014-10-22 02:04:45"
+,9038124452,,Delhi,"Product Information","Price Enquiry","Item code: HL2001, Mobile: 9038124452,City: Delhi,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-22 03:25:31"
+,9038124452,,Delhi,"Product Information","Price Enquiry","Item code: HL2001, Mobile: 9038124452,City: Delhi,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-22 03:25:31"
+,9038124452,,Delhi,"Product Information","Price Enquiry","Item code: HL2001, Mobile: 9038124452,City: Delhi,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-22 03:25:33"
+,9833251070,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: CP5003, Mobile: 9833251070,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/chandeliers/hester-5-lamps","2014-10-22 03:28:34"
+,9829531000,,Ahmedabad,"Product Information","Price Enquiry","Item code: CQ3001P, Mobile: 9829531000,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/kids-range/gloworm-ceiling-mounted","2014-10-22 03:56:25"
+,9777746709,,Mumbai,"Product Information","Price Enquiry","Item code: WL2001, Mobile: 9777746709,City: Mumbai,Enquiry from: http://www.lifebytisva.com/led-designer-range/eva-sidra-2-lamps","2014-10-22 04:13:42"
+,9848911105,,Hyderabad,"Product Information","Price Enquiry","Item code: CQ3001P, Mobile: 9848911105,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/kids-range/gloworm-ceiling-mounted","2014-10-22 04:18:52"
+,9632133933,,Pune,"Product Information","Price Enquiry","Item code: FP1004P, Mobile: 9632133933,City: Pune,Enquiry from: http://www.lifebytisva.com/kids-range/lil-pirate-blue-table-mounted","2014-10-22 04:20:35"
+,9822502892,,Pune,"Product Information","Price Enquiry","Item code: SQ1001P, Mobile: 9822502892,City: Pune,Enquiry from: http://www.lifebytisva.com/kids-range/bzbee-pink-ceiling-mounted","2014-10-22 06:11:13"
+,9154223851,,Hyderabad,"Product Information","Price Enquiry","Item code: HL2001, Mobile: 9154223851,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-22 06:11:51"
+,9154223851,,Hyderabad,"Product Information","Price Enquiry","Item code: HL2001, Mobile: 9154223851,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-22 06:12:26"
+,9500012655,,Chennai,"Product Information","Price Enquiry","Item code: CP3007, Mobile: 9500012655,City: Chennai,Enquiry from: http://www.lifebytisva.com/chandeliers/arancino-3-lamps","2014-10-22 06:12:37"
+,9979501823,,Gujarat,"Product Information","Price Enquiry","Item code: SP1013, Mobile: 9979501823,City: Gujarat,Enquiry from: http://www.lifebytisva.com/pendants/la-passione-black","2014-10-22 06:16:34"
+,9177211736,,Hyderabad,"Product Information","Price Enquiry","Item code: SQ1001P, Mobile: 9177211736,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/kids-range/bzbee-blue-table-mounted","2014-10-22 06:36:58"
+,9177211736,,Hyderabad,"Product Information","Price Enquiry","Item code: FQ1001P, Mobile: 9177211736,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/kids-range/bzbee-blue-table-mounted","2014-10-22 06:37:17"
+,9824082630,,Gujarat,"Product Information","Price Enquiry","Item code: DL1322007, Mobile: 9824082630,City: Gujarat,Enquiry from: http://www.lifebytisva.com/utility-range/led-downlighter","2014-10-22 06:44:25"
+,9463100222,,Punjab,"Product Information","Price Enquiry","Item code: SP3002, Mobile: 9463100222,City: Punjab,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-10-22 06:49:05"
+,9914109559,,Punjab,"Product Information","Price Enquiry","Item code: CP5002, Mobile: 9914109559,City: Punjab,Enquiry from: http://www.lifebytisva.com/chandeliers/viscaria-5-lamps","2014-10-22 07:10:10"
+,8527370441,,Delhi,"Product Information","Price Enquiry","Item code: CP5004, Mobile: 8527370441,City: Delhi,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-10-22 07:12:40"
+,9000007598,,Hyderabad,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9000007598,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-22 07:33:36"
+,9444955983,,Chennai,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9444955983,City: Chennai,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-22 08:09:44"
+,9214422931,,Mumbai,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9214422931,City: Mumbai,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-22 08:12:33"
+,9839018220,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: SP3002, Mobile: 9839018220,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-1-lamp-white","2014-10-22 08:45:13"
+,9032074332,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 9032074332,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-10-22 08:52:09"
+,9998202136,,Gujarat,"Product Information","Price Enquiry","Item code: CP5004, Mobile: 9998202136,City: Gujarat,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-10-22 08:52:33"
+,9998202136,,Gujarat,"Product Information","Price Enquiry","Item code: CP4001, Mobile: 9998202136,City: Gujarat,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-10-22 08:53:39"
+,9998881111,,Ahmedabad,"Product Information","Price Enquiry","Item code: SP4002, Mobile: 9998881111,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/pendants/neo-moda-white","2014-10-22 09:02:14"
+,8143621264,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5001, Mobile: 8143621264,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/tulipe-5-lamps","2014-10-22 09:22:50"
+,9494593271,,Hyderabad,"Product Information","Price Enquiry","Item code: WP2005, Mobile: 9494593271,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-bella-2-lamps","2014-10-22 09:29:26"
+,9966670333,,Hyderabad,"Product Information","Price Enquiry","Item code: WP1001P, Mobile: 9966670333,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/kids-range/flutterby-wall-mounted","2014-10-22 09:31:41"
+,9990803304,,Delhi,"Product Information","Price Enquiry","Item code: WP2003, Mobile: 9990803304,City: Delhi,Enquiry from: http://www.lifebytisva.com/wall-lights/arancino-2-lamps","2014-10-22 10:23:55"
+,9818670559,,Haryana,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 9818670559,City: Haryana,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-10-22 10:28:45"
+,8146015205,,Ludhiana,"Product Information","Price Enquiry","Item code: SP1014, Mobile: 8146015205,City: Ludhiana,Enquiry from: http://www.lifebytisva.com/pendants/la-passione-white","2014-10-22 10:32:57"
+,9704094080,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5004, Mobile: 9704094080,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-10-22 10:35:08"
+,9266586616,,Delhi,"Product Information","Price Enquiry","Item code: WP2005, Mobile: 9266586616,City: Delhi,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-bella-2-lamps","2014-10-22 10:50:22"
+,9860546735,,Pune,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9860546735,City: Pune,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-22 10:57:26"
+,9873300673,,Gurgaon,"Product Information","Price Enquiry","Item code: WP2005, Mobile: 9873300673,City: Gurgaon,Enquiry from: http://www.lifebytisva.com/wall-lights/eva-bella-2-lamps","2014-10-22 10:58:03"
+,9445194545,,Chennai,"Product Information","Price Enquiry","Item code: UF7004, Mobile: 9445194545,City: Chennai,Enquiry from: http://www.lifebytisva.com/utility-range/celestials-whilte-oval-blue","2014-10-22 10:58:48"
+,9663311919,,Chennai,"Product Information","Price Enquiry","Item code: SP4002, Mobile: 9663311919,City: Chennai,Enquiry from: http://www.lifebytisva.com/pendants/neo-moda-white","2014-10-22 10:59:43"
+,9002325241,,Chennai,"Product Information","Price Enquiry","Item code: HL1002, Mobile: 9002325241,City: Chennai,Enquiry from: http://www.lifebytisva.com/led-spots/el-studio-1-lamp","2014-10-22 11:05:24"
+,9002325241,,Chennai,"Product Information","Price Enquiry","Item code: HL1002, Mobile: 9002325241,City: Chennai,Enquiry from: http://www.lifebytisva.com/led-spots/el-studio-1-lamp","2014-10-22 11:05:25"
+,9501065655,,Punjab,"Product Information","Price Enquiry","Item code: CP5008, Mobile: 9501065655,City: Punjab,Enquiry from: http://www.lifebytisva.com/chandeliers/feyyo-5-lamps","2014-10-22 11:11:38"
+,9885511175,,Hyderabad,"Product Information","Price Enquiry","Item code: SL3001, Mobile: 9885511175,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/led-designer-range/sidra","2014-10-22 11:30:53"
+,7790826782,,Noida,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 7790826782,City: Noida,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-22 11:41:22"
+,9935200009,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: WP2003, Mobile: 9935200009,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/wall-lights/arancino-2-lamps","2014-10-22 11:49:59"
+,9592444776,,Ludhiana,"Product Information","Price Enquiry","Item code: HL1001, Mobile: 9592444776,City: Ludhiana,Enquiry from: http://www.lifebytisva.com/led-spots/el-espactaculo-2-lamps","2014-10-22 11:55:16"
+,7838039470,,Delhi,"Product Information","Price Enquiry","Item code: SP1002, Mobile: 7838039470,City: Delhi,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-10-22 11:58:02"
+,7838039470,,Delhi,"Product Information","Price Enquiry","Item code: SP1001, Mobile: 7838039470,City: Delhi,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-10-22 11:58:33"
+,8000079747,,Gujarat,"Product Information","Price Enquiry","Item code: HL4003, Mobile: 8000079747,City: Gujarat,Enquiry from: http://www.lifebytisva.com/led-spots/el-pintura-4-lamps","2014-10-22 12:07:16"
+,9848370599,,Hyderabad,"Product Information","Price Enquiry","Item code: CP3003P, Mobile: 9848370599,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/kids-range/rock-and-roll-multi-color","2014-10-22 12:27:19"
+,9167336939,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: CP5005, Mobile: 9167336939,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-10-22 12:28:19"
+"sanjay jingar",8094737227,,,"Product Information","Contact Tisva :Product Information",India,"2014-10-22 12:31:41"
+sanjay,8094737227,,,"Product Information","Contact Tisva :Product Information",.@,"2014-10-22 12:33:28"
+,9974794253,,Ahmedabad,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9974794253,City: Ahmedabad,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-10-22 12:34:00"
+sanjay,8094737227,,,"Service Request","Contact Tisva :Service Request",India,"2014-10-22 12:35:44"
+,9870802590,,Mumbai,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9870802590,City: Mumbai,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-10-22 12:44:45"
+,9849877668,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5006, Mobile: 9849877668,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/daphne-5-lamps","2014-10-24 03:14:53"
+,9999732327,,Delhi,"Product Information","Price Enquiry","Item code: CQ3001P, Mobile: 9999732327,City: Delhi,Enquiry from: http://www.lifebytisva.com/kids-range/gloworm-ceiling-mounted","2014-10-24 10:46:16"
+"SUNEET GUPTA",9410979789,,,"Product Information","Contact Tisva :Product Information","I AM INTERESTED IN YOUR PRODUCT RANGE FOR MARKETING IN DEHRADUN. PL CONTACT. ","2014-10-25 01:36:31"
+,8860616494,,Delhi,"Product Information","Price Enquiry","Item code: CP5002, Mobile: 8860616494,City: Delhi,Enquiry from: http://www.lifebytisva.com/chandeliers/viscaria-5-lamps","2014-10-26 02:25:42"
+,9015626926,,Gurgaon,"Product Information","Price Enquiry","Item code: WL1016, Mobile: 9015626926,City: Gurgaon,Enquiry from: http://www.lifebytisva.com/led-designer-range/nea","2014-10-26 06:51:22"
+,9030066202,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5001, Mobile: 9030066202,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/tulipe-5-lamps","2014-10-26 07:16:05"
+,9850897897,,Pune,"Product Information","Price Enquiry","Item code: SP1003, Mobile: 9850897897,City: Pune,Enquiry from: http://www.lifebytisva.com/pendants/altaluce-1-lamp-chrome","2014-10-26 12:46:35"
+"Neha Gupta",8376815544,,,"Service Request","Contact Tisva :Service Request","Improper information provided by sales man in TISVA Showroom in Ghitorni and refusal of appropriate action after that.
+","2014-10-26 12:59:13"
+,9225648300,,Pune,"Product Information","Price Enquiry","Item code: SL1002, Mobile: 9225648300,City: Pune,Enquiry from: http://www.lifebytisva.com/led-designer-range/dia-notch-black","2014-10-27 04:40:11"
+,9335021624,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: DP1505002, Mobile: 9335021624,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/utility-range/cfl-downlighter-horde","2014-10-27 07:24:03"
+,9820401692,,Pune,"Product Information","Price Enquiry","Item code: CP5003, Mobile: 9820401692,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/hester-5-lamps","2014-10-28 06:33:47"
+,9158893507,,Pune,"Product Information","Price Enquiry","Item code: CP4001, Mobile: 9158893507,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-4-lamps","2014-10-28 08:43:44"
+,9894676567,,Hyderabad,"Product Information","Price Enquiry","Item code: WP1005, Mobile: 9894676567,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/wall-lights/le-tulipe-2-lamps","2014-10-28 08:54:13"
+,9444911861,,Chennai,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 9444911861,City: Chennai,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-10-28 09:32:26"
+,9923205906,,Pune,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 9923205906,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-10-28 10:59:37"
+,9714136832,,Gujarat,"Product Information","Price Enquiry","Item code: SP1021P, Mobile: 9714136832,City: Gujarat,Enquiry from: http://www.lifebytisva.com/kids-range/wright","2014-10-29 01:43:06"
+"Samir Desai",9825416619,,,"Product Information","Contact Tisva :Product Information","I am intrested to take the dealership of your product in Ahmedabad, Gujarat. So can you caontact me for the same?","2014-10-29 02:05:18"
+,9464417381,,Ludhiana,"Product Information","Price Enquiry","Item code: WP2003, Mobile: 9464417381,City: Ludhiana,Enquiry from: http://www.lifebytisva.com/wall-lights/arancino-2-lamps","2014-10-29 04:19:53"
+,9884022859,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5001, Mobile: 9884022859,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/tulipe-5-lamps","2014-10-29 10:40:25"
+,9890805121,,Maharashtra,"Product Information","Price Enquiry","Item code: SP1013, Mobile: 9890805121,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/pendants/la-passione-black","2014-10-30 04:53:32"
+,8765191042,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: HL1002, Mobile: 8765191042,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/led-spots/el-studio-4-lamps","2014-10-30 08:09:03"
+,9552530683,,Pune,"Product Information","Price Enquiry","Item code: SP1015, Mobile: 9552530683,City: Pune,Enquiry from: http://www.lifebytisva.com/pendants/anese-1-lamp","2014-10-31 05:05:06"
+,9552530683,,Pune,"Product Information","Price Enquiry","Item code: SP1015, Mobile: 9552530683,City: Pune,Enquiry from: http://www.lifebytisva.com/pendants/anese-1-lamp","2014-10-31 05:05:06"
+,9552530683,,Pune,"Product Information","Price Enquiry","Item code: HL3002, Mobile: 9552530683,City: Pune,Enquiry from: http://www.lifebytisva.com/led-spots/el-studio-3-lamps","2014-10-31 05:15:48"
+,9884025635,,Chennai,"Product Information","Price Enquiry","Item code: WP1016, Mobile: 9884025635,City: Chennai,Enquiry from: http://www.lifebytisva.com/wall-lights/chiaro-shape-2","2014-11-01 04:30:40"
+,9923448802,,Pune,"Product Information","Price Enquiry","Item code: UF8001, Mobile: 9923448802,City: Pune,Enquiry from: http://www.lifebytisva.com/utility-range/celestials-whilte-square-shape","2014-11-01 11:53:29"
+,9923448802,,Pune,"Product Information","Price Enquiry","Item code: UF8001, Mobile: 9923448802,City: Pune,Enquiry from: http://www.lifebytisva.com/utility-range/celestials-whilte-square-shape","2014-11-01 11:53:29"
+,9818758435,,Noida,"Product Information","Price Enquiry","Item code: LSX20M0713, Mobile: 9818758435,City: Noida,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-strips-luce-rgb","2014-11-03 02:17:20"
+,9503022425,,Pune,"Product Information","Price Enquiry","Item code: HL4003, Mobile: 9503022425,City: Pune,Enquiry from: http://www.lifebytisva.com/led-spots/el-pintura-4-lamps","2014-11-03 02:57:20"
+,9829008106,,Gurgaon,"Product Information","Price Enquiry","Item code: WP1021, Mobile: 9829008106,City: Gurgaon,Enquiry from: http://www.lifebytisva.com/wall-lights/moda-white","2014-11-03 03:27:12"
+,9873379272,,Gurgaon,"Product Information","Price Enquiry","Item code: SL3002, Mobile: 9873379272,City: Gurgaon,Enquiry from: http://www.lifebytisva.com/led-designer-range/epoche-nea-3-lamps","2014-11-03 07:26:51"
+,8655221234,,Mumbai,"Product Information","Price Enquiry","Item code: CP5008, Mobile: 8655221234,City: Mumbai,Enquiry from: http://www.lifebytisva.com/chandeliers/feyyo-5-lamps","2014-11-03 12:28:40"
+,9849544439,,Hyderabad,"Product Information","Price Enquiry","Item code: WP1015, Mobile: 9849544439,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/wall-lights/chiaro-shape-1","2014-11-04 01:37:41"
+,9320053442,,Mumbai,"Product Information","Price Enquiry","Item code: WL1002, Mobile: 9320053442,City: Mumbai,Enquiry from: http://www.lifebytisva.com/led-designer-range/lyneth","2014-11-05 09:09:14"
+,9869209471,,Maharashtra,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9869209471,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-11-05 09:47:23"
+"Bhavuk Jain",9411100397,,,"Service Request","Contact Tisva :Service Request","I am looking for decorative and as well as utility lighting luminaries for Residential and Commercial Projects. ","2014-11-06 01:44:48"
+,9958418885,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: CP5004, Mobile: 9958418885,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-5-lamps","2014-11-06 08:42:17"
+,9212103598,,Noida,"Product Information","Price Enquiry","Item code: WP2010, Mobile: 9212103598,City: Noida,Enquiry from: http://www.lifebytisva.com/wall-lights/lynnea-2-lamps","2014-11-07 12:34:56"
+,9821128495,,Mumbai,"Product Information","Price Enquiry","Item code: HL3003, Mobile: 9821128495,City: Mumbai,Enquiry from: http://www.lifebytisva.com/led-spots/el-pintura-3-lamps","2014-11-08 06:28:58"
+,0982021034,,Mumbai,"Product Information","Price Enquiry","Item code: CP3003P, Mobile: 0982021034,City: Mumbai,Enquiry from: http://www.lifebytisva.com/kids-range/rock-and-roll-multi-color","2014-11-09 10:09:55"
+,7354056789,,Hyderabad,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 7354056789,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-11-09 11:01:48"
+,9422200000,,Maharashtra,"Product Information","Price Enquiry","Item code: WP1008, Mobile: 9422200000,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/wall-lights/arancino-1-lamp","2014-11-10 07:25:04"
+,9416009183,,Haryana,"Product Information","Price Enquiry","Item code: WP1003P, Mobile: 9416009183,City: Haryana,Enquiry from: http://www.lifebytisva.com/kids-range/rock-and-roll-wall-mounted","2014-11-10 12:57:32"
+"Abhishek Rajgarhia",9090098989,,,"Product Information","Contact Tisva :Product Information","We deal in Interior Products in the state of Orissa & West Bengal having Showrooms in Bhubaneswar & Kolkata. 
+We would like to know if your company is looking to open a showroom for lights in East India.
+Awaiting for your reply.","2014-11-11 07:27:07"
+,9229116181,,"Uttar Pradesh","Product Information","Price Enquiry","Item code: CP5005, Mobile: 9229116181,City: Uttar Pradesh,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-11-11 11:31:01"
+,8095388333,,Chennai,"Product Information","Price Enquiry","Item code: CP4001, Mobile: 8095388333,City: Chennai,Enquiry from: http://www.lifebytisva.com/chandeliers/forma-bella-4-lamps","2014-11-11 12:26:53"
+,9890569768,,Pune,"Product Information","Price Enquiry","Item code: CP5005, Mobile: 9890569768,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/enchante-5-lamps","2014-11-14 04:39:52"
+K.lakshmanrao,9195504221,,,"Product Information","Contact Tisva :Product Information","Contact. Showroom sales outlet","2014-11-15 07:05:27"
+,9821011801,,Mumbai,"Product Information","Price Enquiry","Item code: UF7002, Mobile: 9821011801,City: Mumbai,Enquiry from: http://www.lifebytisva.com/utility-range/celestials-whilte-oval","2014-11-15 10:17:30"
+,9879579002,,Gujarat,"Product Information","Price Enquiry","Item code: SP1021P, Mobile: 9879579002,City: Gujarat,Enquiry from: http://www.lifebytisva.com/kids-range/wright","2014-11-16 06:19:02"
+,9865162612,,Chennai,"Product Information","Price Enquiry","Item code: WL2001, Mobile: 9865162612,City: Chennai,Enquiry from: http://www.lifebytisva.com/led-designer-range/eva-sidra-2-lamps","2014-11-16 07:16:44"
+,7709271606,,Pune,"Product Information","Price Enquiry","Item code: SP1002, Mobile: 7709271606,City: Pune,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-11-16 10:08:01"
+neha,9569704069,,,"Product Information","Contact Tisva :Product Information","regarding tisva jobs","2014-11-17 01:47:05"
+,9821040005,,Mumbai,"Product Information","Price Enquiry","Item code: SL1004, Mobile: 9821040005,City: Mumbai,Enquiry from: http://www.lifebytisva.com/pendants/encanto","2014-11-17 03:44:46"
+"DR R GANESH KUMAR",0981005611,,,"Service Request","Contact Tisva :Service Request","I had purchased Tisva lights/ fittings from your Gurgaon store in May this year.
+One LED tubelight, however , is not working and had to be removed. I was told that this LED tubelight easily lasts 3-4  years , but in this case has not lasted 4 months! 
+","2014-11-17 05:56:09"
+"DR R GANESH KUMAR",9810056113,,,"Service Request","Contact Tisva :Service Request","An LED tubelight bought from your Gurgaon store, is not working 4 months after purchase. I was told by your representative that they last for 3-4 years ""easily"". Kindly revert.","2014-11-17 05:58:53"
+,9818215090,,Noida,"Product Information","Price Enquiry","Item code: SP3001, Mobile: 9818215090,City: Noida,Enquiry from: http://www.lifebytisva.com/pendants/angelicoe-3-lamp-purple","2014-11-17 07:02:54"
+"Viraj Chatterjee",9810303638,,,"Product Information","Contact Tisva :Product Information","I don't see any lights that can be used for Bathrooms. In India, we just get some very standard lights but in the US, the Bathroom lights are extremely trendy with an array of lights on a platform, that can be fastened to the wall on top of the mirror.","2014-11-17 08:58:40"
+"Ar. Rishabh jain",9802389400,,,"Service Request","Contact Tisva :Service Request","kindly SEND YOUR REPRESENTATIVE BY SENDING THE PRODUCT RANGE AND PRICE LIST OF PRODUCTS. fOR RESIDENTIAL PURPOSE WE ARE SEARCHING THE LIGHTING SAMPLES","2014-11-20 08:47:03"
+,9247283671,,Hyderabad,"Product Information","Price Enquiry","Item code: AL10271, Mobile: 9247283671,City: Hyderabad,Enquiry from: http://www.lifebytisva.com/utility-range/led-lamps-lx-1","2014-11-20 11:35:56"
+,9867900234,,Maharashtra,"Product Information","Price Enquiry","Item code: MUL001, Mobile: 9867900234,City: Maharashtra,Enquiry from: http://www.lifebytisva.com/ambient-lighting/led-ceiling-lights-elysian","2014-11-22 10:59:38"
+,9820308795,,Mumbai,"Product Information","Price Enquiry","Item code: CP3018, Mobile: 9820308795,City: Mumbai,Enquiry from: http://www.lifebytisva.com/chandeliers/Calligo-5-lamps-Translucent-glass","2014-11-23 03:17:32"
+"M J Aga",7387079050,,,"Product Information","Contact Tisva :Product Information","We are dealers for LED luminaries, in & around Pune. I am interested in reselling your products in my prospective segment.
+Kindly depute a technical person to meet me at the earliest.
+M J Aga;
+O Solar Inc.
+Pune.
+mailosolar@gmail.com","2014-11-23 04:58:42"
+,9881194788,,Pune,"Product Information","Price Enquiry","Item code: CG5001, Mobile: 9881194788,City: Pune,Enquiry from: http://www.lifebytisva.com/chandeliers/Calligo-5-lamps-Translucent-glass","2014-11-23 10:53:11"
+Bijesh,9986804947,,,"Product Information","Contact Tisva :Product Information","Hi,
+
+I am Bijesh from Bangalore. I would like to purchase complete interior lights for my new home. Please let me know where can I get Tisva products in Bangalore.
+
+Please contact me on 9986804947.
+
+Regards,
+Bijesh","2014-11-24 06:55:50"
+"Dinesh Darda",9823336611,,,"Product Information","Contact Tisva :Product Information","i m intrested in ditribution in aurangabad ( MS).
+contact  me or please send contact number of  concerned person ","2014-11-25 01:21:13"
+padmanabhaswamy,9542426777,,,"Product Information","Contact Tisva :Product Information","I MR PADMANABHA SWAMY PROPERTY CONSULTANT-REG-COMMERCIAL LEASING IN COSTAL ANDHRA ,BASED IN VIZAG","2014-11-25 03:23:51"
+,9560522668,,Noida,"Product Information","Price Enquiry","Item code: CG6001, Mobile: 9560522668,City: Noida,Enquiry from: http://www.lifebytisva.com/chandeliers/Calligo-6lamps-Translucent-glass","2014-11-25 03:45:30"
+"yuvraj arora",9999099925,,,"Product Information","Contact Tisva :Product Information","fixture requirement , and complain about a particular dealer.","2014-11-25 04:03:02"
+,9560522668,,Delhi,"Product Information","Price Enquiry","Item code: CG6001, Mobile: 9560522668,City: Delhi,Enquiry from: http://www.lifebytisva.com/chandeliers/Calligo-6lamps-Translucent-glass","2014-11-26 12:53:47"
+,9876543210,,Haryana,"Product Information","Price Enquiry","Item code: CP3018, Mobile: 9876543210,City: Haryana,Enquiry from: http://www.lightsbytisva.com/chandeliers/Calligo-3-lamps-shiny-white","2014-11-28 06:45:20"
+,1234567890,,Maharashtra,"Product Information","Price Enquiry","Item code: CP3018, Mobile: 1234567890,City: Maharashtra,Enquiry from: http://www.lightsbytisva.com/chandeliers/Calligo-3-lamps-shiny-white","2014-11-28 06:45:44"
+,9825090798,,Ahmedabad,"Product Information","Price Enquiry","Item code: FP1008, Mobile: 9825090798,City: Ahmedabad,Enquiry from: http://www.lightsbytisva.com/table-lamps/1head-lamp-silver-chrome","2014-11-28 12:36:19"

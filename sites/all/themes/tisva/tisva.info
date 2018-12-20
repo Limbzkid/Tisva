@@ -1,0 +1,32 @@
+
+name = Tisva
+description = Theme Develope By CNC
+package = Core
+version = VERSION
+core = 7.x
+
+
+
+regions[header_left] = Header left 
+regions[header_right_top] = Header right top
+regions[header_right_bottom] = Header right bottom
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+regions[home_featured] = Featured
+regions[home_top_products] = Top products
+regions[content] = Content
+regions[content_left] = Content Left
+regions[content_right] = Content Right
+
+
+regions[footer] = Footer
+
+settings[shortcut_module_link] = 0
+
+
+
+version = "7.26"
+project = "drupal"
+datestamp = "1389815930"
+

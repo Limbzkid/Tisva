@@ -1,0 +1,155 @@
+/****************** MEDIA *********************/
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 639px)
+{
+/*body:before { content: "Less than 640";}*/
+.container .pageWrapper .header {height:85px}
+.container .pageWrapper .header .logo {padding:25px 0 0 15px; width:120px}
+.container .pageWrapper .header .logo img {float:left; width:100%}
+.container .pageWrapper .header .rhsLinks li {padding:25px 14px 26px; width:25px}
+.container .pageWrapper .header .rhsLinks li:first-child {background-size: 1px 55%}
+.container .pageWrapper .header .rhsLinks li a {background-size: 100%; height:23px}
+.container .pageWrapper .header .rhsLinks li.searchBtn.active a, .container .pageWrapper .header .rhsLinks li.menuBtn.active a {background-size: 100%; height:23px}
+.container .pageWrapper .searchWrapper {padding:22px 15px}
+.container .pageWrapper .searchWrapper .inputWrap {padding:7px}
+.container .pageWrapper .searchWrapper .inputWrap input {font-size:1.5em}
+.container .pageWrapper .searchWrapper input.btnGO {font-size:1.5em; margin-left:6px; padding:9px 6px}
+.navWrapper .scroller ul li a {background-size:3px; font-size:1.5em; padding:12px 20px 12px 30px}
+.navWrapper .scroller ul li a.active {background-size:3px}
+.navWrapper .scroller ul li.mainLink a span, .navWrapper .scroller ul li.mainLink a.active span {background-size:11px}
+.navWrapper .scroller ul li a span, .navWrapper .scroller ul li.mainLink ul li a span {background-size:11px; text-indent:10px}
+.navWrapper .scroller ul li.mainLink ul li a {background-position:11% center; font-size:1.4em; padding:12px 20px 12px 39px}
+
+/*.homeSlider .sliderDiv .slide .imgBox img {max-height:175px}*/
+.homeSlider .sliderDiv .slide .imgBox img {width:56%}
+.homeSlider .sliderDiv .slide .content {padding:7% 7% 12%}
+.homeSlider .sliderDiv .slide .content p {font-size:2em; padding-bottom:10px}
+.homeSlider .sliderDiv .slide .content p.prdTitle, .homeSlider .sliderDiv .slide .popup p.prdTitle {font-size:3em; padding-bottom:0}
+.homeSlider .sliderDiv .slide .popup p, .homeSlider .sliderDiv .slide .popup ul li {font-size:1.5em; padding-bottom:10px}
+.homeSlider .sliderDiv .slide .popup ul li {padding-bottom:5px}
+.homeSlider .sliderDiv .slide .content ul.btns li {padding-left:10px}
+.homeSlider .sliderDiv .slide .content ul.btns li a, .homeSlider .sliderDiv .slide .popup a.btn {border:1px solid #414141; font-size:1.3em; padding:7px 5px; width:65px}
+.homeSlider .sliderDiv .slide .popup a.btn {border-color:#00fffc}
+.homeSlider .sliderDiv .slide .content ul.btns li a:active, .homeSlider .sliderDiv .slide .popup a.btn:active {box-shadow:0 0 7px 0 #00fffc}
+.homeSlider .slide a.getMore {font-size:1.3em; padding:7px 5px; width:65px}
+.homeSlider .sliderDiv .slide .content ul.btns li a:hover, .homeSlider .sliderDiv .slide .popup a.btn:hover {border-width:1px}
+.homeSlider .sliderDiv .slide .popup a.closeBtn {background-size:20px; height:20px; right:10px; top:12px; width:20px}
+.homeSlider .sliderDiv .slide .popup {padding:2.5% 4.5%}
+
+.homeSlider .pagination {bottom:18px; margin-left:-30px; left:50%}
+.homeSlider .pagination li {background-size: 100%; height:7px; width:7px}
+.homeSlider .pagination li.sel {background-position:0 -12px}
+
+.contentWrap, .prodctCatWrap, .prodctDetailsWrap, .overview_top {padding:15px}
+h1 {font-size:1.8em; padding-bottom:10px}
+.prodctCatWrap p {font-size:1.5em; padding-bottom:7px}
+.prodctCatWrap a.readMore {font-size:1.5em}
+.product-slide .prod_thumb {padding:15px}
+.product-slide .prod_thumb span.prod_title {font-size:1.5em}
+a.loadMore {font-size:1.5em; margin:7px 15px 15px}
+.storeLocatorWrap .locatorForm {padding:15px 15px 10px}
+div.selectBox {background-size:12px; border-width:1px; height:34px; margin:0 0 10px 0; padding:7px 5%}
+div.selectBox div.selectedvalue {height: 21px; font-size:1.5em; left: 5%; line-height: 1.2em; top: 7px; width: 90%}
+div.selectBox select {height: 34px}
+.locatorAddress li {background: url(../images/blue-bullet.png) 15px 6px no-repeat; background-size:5px; margin-top:15px; padding:0 0 15px 30px; position:relative}
+.locatorAddress li span.iconLocator {background-size:15px; height:26px; right:20px; width:15px}
+.locatorAddress li p {font-size:1.5em}
+.locatorAddress li p.ttl {padding-bottom:7px}
+
+.formWrap .fieldWrap {padding:0 0 15px}
+.formWrap .fieldWrap label {font-size:1.5em; padding: 0 15px 0 0}
+.formWrap .inputWrap, .formWrap .textAreaWrap {border:1px solid #414141; padding:7px 10px}
+.formWrap .inputWrap {font-size:1.5em}
+.formWrap .fieldWrap label.error {font-size:1.3em}
+.formWrap .fieldWrap .captchaImgWrap {float:left; padding:0 0 7px; width:77%}
+.formWrap .fieldWrap .captchaImgWrap img {float:left; width:100%}
+.formWrap .fieldWrap .captchaRefresh {margin-top:14px; width:18%}
+.formWrap .fieldWrap .captchaRefresh img {float:left; width:100%}
+.formWrap .fieldWrap .inputWrap.inputCaptcha input {text-align:center}
+.formWrap .fieldWrap .textAreaWrap textarea {font-size:1.5em; height:85px}
+.formBtns {padding:0 0 20px}
+.formBtns input {font-size:1.5em; padding:7px 0}
+.radioList li {padding: 15px 0 0}
+.formWrap .fieldWrap .radioList li label {background-size:26px; font-size:1.5em; height:26px; line-height:1.7em; padding: 0 0 0 35px}
+.formWrap .fieldWrap .radioList li label.active {background-size:26px;}
+.radioList li input, .customRadioList li input {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; cursor:pointer; filter: alpha(opacity=0); -moz-opacity:0; -khtml-opacity: 0; opacity:0; float:left}
+.thankYouMsg {font-size: 1.6em}
+
+ul.breadcrumb {padding:0 0 5px}
+ul.breadcrumb li {font-size:1.8em}
+.prodctDetailsWrap .item_code {font-size:1.7em; padding:0 0 15px}
+.lmpInfolhs p {font-size:1.5em; padding:0 0 8px}
+.lmpInfolhs a.readMore {font-size:1.5em}
+.lmpInfolhs p.mrp {font-size:1.7em; padding:7px 0 0}
+.lmpInforhs a.magnifyBtn {border:1px solid #414141; padding:5px}
+.lmpInforhs a.magnifyBtn span {background-size:22px; bottom:5px; height:22px; right:5px; width:22px}
+
+.prdctTabsWrap {padding:15px 0 5px}
+.prdctTabsWrap ul.tabs li a {font-size:1.5em; min-height:35px; padding:15px 0}
+.prdctTabsWrap ul.tabs li a.singleLine {min-height:29px; padding-top:22px}
+.prdctTabsWrap .tabContent {padding:20px 15px 5px}
+.prdctTabsWrap .tabContent ul {padding:0 0 10px}
+.prdctTabsWrap .tabContent ul li {background-position: 0 6px; background-size:3px; font-size:1.2em; padding: 0 0 7px 8px}
+.prdctTabsWrap .tabContent p.title {font-size:1.5em; padding:0 0 7px}
+.prdctTabsWrap .tabContent ul.suitableFor li {border-left:1px solid #404040; padding: 0 0 7px; width:55px}
+.prdctTabsWrap .tabContent ul.suitableFor li span img {height:28px}
+.prdctTabsWrap .tabContent .imgBox img {width:50%}
+.prdctTabsWrap .tabContent table th, .prdctTabsWrap .tabContent table td {font-size:1.2em}
+
+.prdctImgLightBox .closeBtn {background-size: 20px; float:left; height:20px; position:absolute; right:5%; top:5%; width:20px}
+
+.overview_top p {font-size:1.5em; padding-bottom:10px}
+h2 {font-size:1.5em; padding-bottom:7px}
+.overview_top.text_cont ul {padding: 0 0 5px 10px;}
+.overview_top.text_cont ul li {font-size:1.5em; padding-bottom:10px}
+.overview_top.text_cont ul.sitemapLinks1 li span {margin:6px 4px 0 0}
+.overview_top.text_cont ul.sitemapLinks1 li ul {padding:9px 0 0 10px}
+.overview_top.text_cont ul.sitemapLinks1 li ul li span {margin:3px 4px 0 0}
+.search-results .title {font-size: 1.7em}
+.mobErr, .cityErr {font-size: 1.2em; padding:5px 0 0}
+.cityErr {margin:-10px 0 15px}
+/*footer starts*/
+.footerWrap {height:54px}
+.footer {padding:12px 18px}
+.footer .downloadLinks {bottom:54px; padding:12px 12px 0; width:110px}
+.footer ul.downloadLinks li {padding-bottom:15px}
+.footer ul.downloadLinks li a {background-size: auto 30px; font-size:1.5em; padding:8px 0 8px 32px}
+.footer a.downloadBtn {background-size: 20px auto; font-size:1.5em; padding:7px 0 0 30px}
+.footer a.downloadBtn.active {background-size: 20px auto}
+
+.footer p.callUs {font-size:1.5em}
+.footerArrow {background-size:100%; height:28px; left:50%; margin:-28px 0 0 -28px; width:56px}
+.fixBandWrap {padding:0 22px}
+.fixBandWrap .fixBand {padding:35px 0 15px}
+.fixBandWrap p {font-size:1.3em; padding-bottom:15px}
+.fixBandWrap ul {max-width:280px}
+.fixBandWrap ul li {background-size: 3px; margin-left:20px; padding:0 0 0 9px}
+.fixBandWrap .footerArrowDown {background-size:100%; height:28px; left:50%; margin-left: -28px; position: absolute; width:56px}
+.fixBandWrap ul li a {font-size:1.3em}
+/*footer ends*/
+
+/*added on 13Jan 15*/
+
+.container .pageWrapper .header .rhsLinks li.searchBtn span{ position:absolute; top:55px;} 
+.container .pageWrapper .header .rhsLinks li.locator span{ position:absolute; top:49px; text-align:center; width:36px; margin:0 2px 0 -3px} 
+.container .pageWrapper .header .rhsLinks li.menuBtn span{ position:absolute; top:53px;} 
+.container .pageWrapper .header .rhsLinks li a span{ font-size:1.2em}
+.feedback { width:35px}
+/*added done*/
+}
+@media only screen 
+and (width : 360px) 
+and (height : 640px)
+{
+	.homeSlider .sliderDiv .slide .imgBox img {width:80%}
+	.homeSlider .sliderDiv .slide .content p.prdTitle, .homeSlider .sliderDiv .slide .popup p.prdTitle {padding-bottom:15px}
+	.homeSlider .sliderDiv .slide .content p {padding-bottom:20px}
+}
+@media screen and (orientation:landscape) {
+	/*body:before { content: "landscape mode";}
+    .pageWrapper {display:none}
+	.orientationMsg {display:block}*/
+}
+/****************** MEDIA *********************/

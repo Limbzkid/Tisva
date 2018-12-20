@@ -1,0 +1,5 @@
+name = pagenotfound
+description = 404 Error Handling
+package = 404 Error modules
+core = 7.x
+files[] = pagenotfound.module

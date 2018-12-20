@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * Implements hook_permission().
+ */
+function ubercart_bulk_attributes_permission() {
+  return array(
+    'create bulk options' =>  array(
+      'title' => t('Create bulk options'),
+      ),
+    );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function ubercart_bulk_attributes_menu() {
+  $items['admin/store/products/attributes/%uc_attribute/options/add-bulk'] = array(
+    'title' => 'Add bulk options',
+    'description' => 'Add bulk attribute options.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ubercart_bulk_attributes_bulk_options_form', 4),
+    'access arguments' => array('create bulk options'),
+    'type' => MENU_LOCAL_ACTION,
+    'file' => 'ubercart_bulk_attributes.admin.inc',
+    );
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ubercart_bulk_attributes_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'uc_attribute_options_form':
+    $attribute = $form_state['build_info']['args'][0];
+    $delta = ubercart_bulk_attributes_get_delta('uc_attribute_options', 'ordering');
+    foreach ($attribute->options as $key => $data) {
+      $form['options'][$key]['ordering']['#delta'] = $delta;
+    }
+    break;
+    case 'uc_object_options_form':
+    $object = $form_state['build_info']['args'][0];
+    $type = $form_state['build_info']['args'][1];
+
+    if ($type == 'product') {
+      $product = $object;
+      $id = $product->nid;
+      $table = 'uc_product_options';
+    }
+    elseif ($type == 'class') {
+      $class = $object;
+      $id = $class->pcid;
+      $table = 'uc_class_attribute_options';
+    }
+
+    $delta = ubercart_bulk_attributes_get_delta($table, 'ordering');
+
+    foreach ($form['attributes'] as $aid => $attribute) {
+      if (is_numeric($aid)) {
+        foreach ($form['attributes'][$aid]['options'] as $oid => $option) {
+          if (is_numeric($oid)) {
+            $form['attributes'][$aid]['options'][$oid]['ordering']['#delta'] = $delta;
+          }
+        }
+      }
+    }
+    break;
+
+  }
+}
+
+function ubercart_bulk_attributes_get_delta($table, $field) {
+  $delta_min = -50;
+  $delta_max = 50;
+
+  $query = db_select($table, 't');
+  $query->fields('t');
+  $query->orderBy($field, 'ASC');
+  $query->range(0, 1);
+
+  $results = $query->execute();
+
+  if ($row = $results->fetchObject()) {
+    $delta_max = $row->$field;
+  }
+
+  $query = db_select($table, 't');
+  $query->fields('t');
+  $query->orderBy($field, 'DESC');
+  $query->range(0, 1);
+
+  $results = $query->execute();
+
+  if ($row = $results->fetchObject()) {
+    $delta_min = $row->$field;
+  }
+
+  return max(abs($delta_min), abs($delta_max));
+}

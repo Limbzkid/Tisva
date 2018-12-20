@@ -1,0 +1,876 @@
+<?php
+
+  /**
+  * Implement hook_menu().
+  */
+
+  
+  function tisva_mobile_custom_pages_menu() {
+    $items = array();
+
+    $items['load-more-products-ajax'] = array(
+      'title' => 'Load More Products Ajax',
+      'page callback' => 'load_more_products_ajax',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+    
+    $items['get-products-nid-ajax'] = array(
+      'title' => 'Get Products Ajax',
+      'page callback' => 'get_products_nid_ajax',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+		$items['get-products-tid-ajax'] = array(
+      'title' => 'Get Products Ajax',
+      'page callback' => 'get_products_tid_ajax',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+		$items['product-notify-ajax'] = array(
+      'title' => 'Product Form Submit',
+      'page callback' => 'product_notify_ajax',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+		$items['edit-product-details'] = array(
+      'title' => 'Product Details Edit',
+      'page callback' => 'edit_product_details',
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+		$items['feedback'] = array(
+      'title' => 'Feedback',
+      'page callback' => 'tisva_feedback',
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+		$items['submit-feedback'] = array(
+      'title' => 'Submit Feedback',
+      'page callback' => 'submit_feedback',
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+		$items['locateCity'] = array(
+      'title' => 'Locate City',
+      'page callback' => 'locate_city',
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+    );
+		
+    return $items;
+  }
+	
+	
+	
+	function locate_city() {
+		$city = filter_xss(trim($_POST['city']));
+		$state = filter_xss(trim($_POST['state']));
+		//$pin = filter_xss(trim($_POST['pin']));
+		if($city != '') {
+			$_SESSION['strCity'] = $city;
+		} else {
+			$_SESSION['strCity'] = '';
+		}
+		if($state != '') {
+			$_SESSION['strState'] = $state;
+		} else {
+			$_SESSION['strState'] = '';
+		}
+		//if($pin != '') {
+		//	$_SESSION['strPin'] = $pin;
+		//} else {
+		//	$_SESSION['strPin'] = '';
+		//}
+		$res = $state .' - '.$city ;
+		echo $res;
+	}
+	
+	function submit_feedback() {
+		$error = 0;
+		$msg = array();
+		$name = filter_xss(trim($_POST['name']));
+		$mail = filter_xss(trim($_POST['mail']));
+		$feed = filter_xss(trim($_POST['feed']));
+		if($name == '') {
+			$msg[] = 'nameErr-Please enter name.';
+			$error = 1;
+		}
+		if(!preg_match("/^([a-zA-Z.\']+\s?)*$/", $name)) {
+			$msg[] = 'nameErr-Please enter valid name';
+			$error = 1;
+		}
+		if($mail == '') {
+			$msg[] = 'mailErr-Please enter email.';
+			$error = true;
+		}
+		if(!valid_email_address($mail)) {
+			$msg[] = 'mailErr-Please enter valid email';
+			$error = 1;
+		}
+		if($feed == '') {
+			$msg[] = 'feedErr-Please enter feedback.';
+			$error = 1;
+		}
+		if(!$error) {
+			$sub_time = date('Y-m-d H:i:s', REQUEST_TIME);
+			$id = db_insert('user_feedback')
+						->fields(array(
+									'user_name' => $name,
+									'user_email' => $mail,
+									'user_suggestion'=> $feed,
+									'date_of_submission' => $sub_time,
+									'token'=> 'mobilemobilemobilemobilemobilemobilemobile',
+									'status' => 1,
+			))
+			->execute();
+			if($id) {
+				$subject = 'Tisva Mobile Feedback';
+				$from=variable_get('site_mail', ini_get('sendmail_from'));
+				$to=variable_get('site_mail', ini_get('sendmail_from'));
+				$headers = "From: " . strip_tags($mail) . "\r\n";
+				$headers .= "Reply-To: ". strip_tags($mail) . "\r\n";
+				$headers .= "MIME-Version: 1.0\r\n";
+				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+				
+				if(mail($to, $subject, $feed, $headers)) {
+					$msg[] = 'Thank you for your feedback';
+				} else {
+					$msg[] = 'Failed to send mail.';
+				}
+			}
+		}
+		echo json_encode(array('status' => $error, 'msg' => $msg));
+	}
+	
+	function tisva_feedback() {
+		return '';
+	}
+	
+	function product_notify_ajax() {
+		$msg = array();
+    $error = 0;
+		$mobile = filter_xss($_POST['mobile']);
+		$state = filter_xss($_POST['state']);
+		$item_code = filter_xss($_POST['mode']);
+    if($mobile == '' || $mobile == 'Enter Your Mobile') {
+      $msg[] = "mobErr-Please enter your mobile number.";
+      $error = 1;
+    }
+    if(!preg_match('/^[0-9]{10}+$/', $mobile)) {
+      $msg[] = "mobErr-Please enter a valid Mobile no.";
+      $error = 1;
+    }
+    if($state == 'Select State') {
+      $msg[] = "cityErr-Please select city.";
+      $error = 1;
+    }
+		if(!$error) {
+      $subject = 'Price Enquiry';
+      $message = '<html><body>';
+      $message .= '<table width="100%"; rules="all" style="border:1px solid #3A5896;" cellpadding="10">';
+      $message .= "<tr><td colspan='2'><span class='item_code'>Item code: ".$item_code."</span></td></tr>";
+      $message .= "<tr><td colspan='2'>Mobile: ".$mobile."</td></tr>";
+      $message .= "<tr><td colspan='2'>City: ".$state."</td></tr>";
+      $message .= "<tr><td colspan='2'>Enquiry from: <a href='http://".$_SERVER['HTTP_HOST'] . request_uri()."' target='_blank'>http://".$_SERVER['HTTP_HOST'] .request_uri()."</a></td></tr>";
+      $message .= "</table>";
+      $message .= "</body></html>";
+      
+      $nid = db_insert('contactus')->fields(array(
+              'mobile1' => $mobile,
+              'city' => $state,
+              'query' => $message,
+              'requesttype' => 1,
+              'querydate' => format_date(time(), 'custom', 'Y-m-d h:i:s'),
+              'subject'=>$subject,
+            ))->execute();
+    
+      $from=variable_get('site_mail', ini_get('sendmail_from'));
+      $to=variable_get('site_mail', ini_get('sendmail_from'));
+      $headers = "From: " . strip_tags($from) . "\r\n";
+      $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+      $headers .= "MIME-Version: 1.0\r\n";
+      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+      
+      if(mail($to, $subject, $message, $headers)) {
+        $msg = 'We\'ll get back to you shortly';
+      } else {
+        $msg = 'Failed to send mail.';
+      }
+    }
+		
+		echo json_encode(array('error' => $error, 'msg' => $msg));
+		//return;
+	}
+	
+	function get_products_nid_ajax() {
+    $feature = '';
+    $tech_spec = '';
+    $suit_li = '';
+    $nid = $_POST['nid'];
+    $query = new EntityFieldQuery();
+		$entities = $query->entityCondition('entity_type', 'node')
+			->propertyCondition('nid', $nid)
+			->propertyCondition('status', 1)
+			->execute();
+
+		if (!empty($entities['node'])) {
+			$node = node_load(array_shift(array_keys($entities['node'])));
+		}
+    //echo '<pre>';
+    //print_r($node);
+    //echo '</pre>';
+    //exit;
+    $title = $node->title;
+    $model = $node->model;
+    $price = number_format($node->list_price, 2, '.', '');
+    $desc = $node->body['und'][0]['value'];
+    $image_uri = $node->uc_product_image['und'][0]['uri'];
+		$image_path = file_create_url($image_uri);
+    $material = $node->field_material['und'][0]['value'];
+		$color = $node->field_color['und'][0]['value'];
+		$installation = $node->field_installation['und'][0]['value'];
+		$features = $node->field_features['und'][0]['value'];
+		$tech_specs = $node->field_techincal_spec['und'][0]['value'];
+		$tech_specs_1 = $node->field_technical_specification_wh['und'][0]['value'];
+		$spec_img = file_create_url($node->field_specification_image['und'][0]['uri']);
+    
+    foreach($node->field_spaces_applicable['und'] as $suit) {
+      $suitable_for_tid = $suit['tid'];
+      $result = db_query("SELECT name FROM {taxonomy_term_data} WHERE tid = :arg", array(':arg' => $suitable_for_tid));
+      $result = $result->fetchAssoc();
+      $suitable_for = $result['name'];
+      $suit_image = base_path().'sites/default/files/'.strtolower($suitable_for).'.png';
+      $suit_li .= '<li><span><img src="'.$suit_image.'" alt=""></span><span>'.$suitable_for.'</span></li>';
+    }
+
+    $body = $desc. '<a class="readMore" href="javascript:;">Read More</a><p class="mrp">MRP: <span class="rupees">`</span>'.$price.'</p>';
+    $feature .= '<ul><li>Material<br>'.$material.'</li><li>Color<br>'.$color.'</li><li>Installation<br>'.$installation.'</li>'.strip_tags($features, "<li>").'</ul>';
+		$feature .= '<p class="title">Suitable for</p><ul class="suitableFor">'.$suit_li.'</ul>';
+		
+ 
+		$tech_spec .= '<p class="title">The Specifications</p>';
+		if(!empty($node->field_specification_image)) {
+			$tech_spec .= '<div class="imgBox"><img src="'.$spec_img.'" alt=""></div>';
+		}
+		$tech_spec .= str_replace('<ul', '<ul class="specifications"', $tech_specs);
+		$tech_spec .= str_replace('<ul', '<ul class="specifications"', $tech_specs_1);
+
+    $data = array (
+              'nid'   => $nid,
+              'title' => $title,
+							'price' => $price,
+              'model' => $model,
+              'body' => $body,
+              'image' => $image_path,
+              'features' => $feature,
+              'tech_specs' => $tech_spec,
+    );
+    echo json_encode($data);
+  }
+	
+	function get_products_tid_ajax() {
+		$name = '';
+		$model = '';
+		$img = '';
+		$price = '';
+		$features = '';
+		$tech_specs = '';
+		$tid = $_POST['tid'];
+		$parent_tid = $_POST['pid'];
+    $type_of_lamp = '';
+    $no_of_lamp = '';
+    $fitting_cap = '';
+    $operating_voltage = '';
+    $rated_voltage = '';
+    $frequency = '';
+    $rated_wattage.= '';
+    $total_wattage = '';
+    $cct = '';
+    $luminous_flux = '';
+    $rated_wattage = '';
+    $no_of_leds = '';
+    $wattage = '';
+    $dimming = '';
+    $remote_control = '';
+    $base = '';
+    $current = '';
+    $life = '';
+    $capsule_tpye = '';
+    $power_factor = '';
+    $rated_luminous_flux = '';
+    $max_length = '';
+    if($parent_tid == 35) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('uc_products', 'uc', 'uc.nid = n.nid');
+      $query->leftJoin('field_data_field_features', 'ffs', 'ffs.entity_id = n.nid');
+      $query->leftJoin('field_data_field_sub_category', 'sc', 'sc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_wattage', 'frw', 'frw.entity_id = n.nid');
+      $query->leftJoin('field_data_field_operating_voltage', 'fov', 'fov.entity_id = n.nid');
+      $query->leftJoin('field_data_field_cct', 'cct', 'cct.entity_id = n.nid');
+      $query->leftJoin('field_data_field_frequency', 'ff', 'ff.entity_id = n.nid');
+      $query->leftJoin('field_data_field_no_of_leds', 'fnl', 'fnl.entity_id = n.nid');
+      $query->leftJoin('field_data_field_wattage', 'fw', 'fw.entity_id = n.nid');
+      $query->leftJoin('field_data_field_dimming', 'fd', 'fd.entity_id = n.nid');
+      $query->leftJoin('field_data_field_remote_control', 'frc', 'frc.entity_id = n.nid');
+      $query->fields('n', array('nid', 'title', 'status', 'created'))
+            ->fields('ffs', array('field_features_value'))
+            ->fields('uc', array('model', 'sell_price'))
+            ->fields('sc', array('field_sub_category_tid'))
+            ->fields('frw', array('field_rated_wattage_value'))
+            ->fields('fov', array('field_operating_voltage_value'))
+            ->fields('cct', array('field_cct_value'))
+            ->fields('ff', array('field_frequency_value'))
+            ->fields('fnl', array('field_no_of_leds_value'))
+            ->fields('fw', array('field_wattage_value'))
+            ->fields('fd', array('field_dimming_value'))
+            ->fields('frc', array('field_remote_control_value'))
+            ->condition('n.status', 1, '=')
+            ->condition('sc.field_sub_category_tid', $tid, '=')
+            ->groupBy('n.nid')
+            ->orderBy('n.created', 'DESC');
+            
+      $result = $query->execute();
+      foreach($result as $row) {
+        $name = $row->title;
+        $price = number_format($row->sell_price, 2, '.', '');
+        $img = file_create_url($row->uri);
+        $features = $row->field_features_value;
+        $item_code .= '<th>'.$row->model.'</th>';
+        $sell_price .= '<td>'.number_format($row->sell_price, 2, '.', '').'</td>';
+        $rated_wattage .= '<td>'.$row->field_rated_wattage_value.'</td>';
+        $op_voltage .= '<td>'.$row->field_operating_voltage_value.'</td>';
+        if($cct == '') {
+          $cct .= '<td>&nbsp;</td>';
+        } else {
+          $cct .= '<td>'.$row->field_cct_value.'</td>';
+        }
+        $frequency .= '<td>'.$row->field_frequency_value.'</td>';
+        $no_of_leds .= '<td>'.$row->field_no_of_leds_value.'</td>';
+        $wattage .= '<td>'.$row->field_wattage_value.'</td>';
+        $dimming .= '<td>'.$row->field_dimming_value.'</td>';
+        if($row->field_remote_control_value) {
+          $remote_control .= '<td>Yes</td>';
+        } else {
+          $remote_control .= '<td>NA</td>';
+        } 
+      }
+      $tech_specs .= '<tr class="table_head"><th>ITEM CODE</th>'.$item_code.'</tr>';
+			$tech_specs .= '<tr><td>RATED WATTAGE</td>'.$rated_wattage.'</tr>';
+			$tech_specs .= '<tr><td>OPERATING VOLTAGE</td>'.$op_voltage.'</tr>';
+			$tech_specs .= '<tr><td>CCT</td>'.$cct.'</tr>';
+			$tech_specs .= '<tr><td>FREQUENCY</td>'.$frequency.'</tr>';
+			$tech_specs .= '<tr><td>NO OF LEDS</td>'.$no_of_leds.'</tr>';
+			$tech_specs .= '<tr><td>WATTAGE</td>'.$wattage.'</tr>';
+			$tech_specs .= '<tr><td>DIMMING</td>'.$dimming.'</tr>';
+			$tech_specs .= '<tr><td>Remote Control</td>'.$remote_control.'</tr>';
+			$tech_specs .= '<tr class="prices"><td>MRP (in Rs.)</td>'.$sell_price.'</tr>';       
+    } elseif($parent_tid == 27) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('uc_products', 'uc', 'uc.nid = n.nid');
+      $query->leftJoin('field_data_field_sub_category', 'sc', 'sc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_features', 'ffs', 'ffs.entity_id = n.nid');
+      $query->leftJoin('field_data_field_type_of_lamp', 'tol', 'tol.entity_id = n.nid');
+      $query->leftJoin('field_data_field_base', 'b', 'b.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_voltage', 'frv', 'frv.entity_id = n.nid');
+      $query->leftJoin('field_data_field_operating_voltage', 'fov', 'fov.entity_id = n.nid');
+      $query->leftJoin('field_data_field_frequency', 'ff', 'ff.entity_id = n.nid');
+      $query->leftJoin('field_data_field_wattage', 'fw', 'fw.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_current', 'c', 'c.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_luminous_flux', 'lf', 'lf.entity_id = n.nid');
+      $query->leftJoin('field_data_field_cct', 'cct', 'cct.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_life', 'l', 'l.entity_id = n.nid');
+      $query->leftJoin('field_data_field_dimming', 'fd', 'fd.entity_id = n.nid');
+      $query->fields('n', array('nid', 'title', 'status', 'created'))
+            ->fields('ffs', array('field_features_value'))
+            ->fields('uc', array('model', 'sell_price'))
+            ->fields('sc', array('field_sub_category_tid'))
+            ->fields('tol', array('field_type_of_lamp_value'))
+            ->fields('b', array('field_base_value'))
+            ->fields('frv', array('field_rated_voltage_value'))
+            ->fields('fov', array('field_operating_voltage_value'))
+            ->fields('ff', array('field_frequency_value'))
+            ->fields('fw', array('field_wattage_value'))
+            ->fields('c', array('field_current_value'))
+            ->fields('lf', array('field_luminous_flux_value'))
+            ->fields('cct', array('field_cct_value'))
+            ->fields('l', array('field_life_value'))
+            ->fields('fd', array('field_dimming_value'))
+            ->condition('n.status', 1, '=')
+            ->condition('sc.field_sub_category_tid', $tid, '=')
+            ->groupBy('n.nid')
+            ->orderBy('n.created', 'DESC');
+      $result = $query->execute();						
+      foreach($result as $row) {
+        $name = $row->title;
+        $price = number_format($row->sell_price, 2, '.', '');
+        $img = file_create_url($row->uri);
+        $features = $row->field_features_value;
+        $item_code .= '<th>'.$row->model.'</th>';
+        $sell_price .= '<td>'.number_format($row->sell_price, 2, '.', '').'</td>';
+        $type_of_lamp .= '<td>'.$row->field_type_of_lamp_value.'</td>';
+        $base .= '<td>'.$row->field_base_value.'</td>';
+        $rated_voltage .= '<td>'.$row->field_rated_voltage_value.'</td>';
+        $operating_voltage .= '<td>'.$row->field_operating_voltage_value.'</td>';
+        $frequency .= '<td>'.$row->field_frequency_value.'</td>';
+        $wattage .= '<td>'.$row->field_wattage_value.'</td>';
+        $current .= '<td>'.$row->field_current_value.'</td>';
+        $luminous_flux .= '<td>'.$row->field_luminous_flux_value.'</td>';
+        $cct .= '<td>'.$row->field_cct_value.'</td>';
+        $life .= '<td>'.$row->field_life_value.'</td>';
+        $dimming .= '<td>'.$row->field_dimming_value.'</td>';
+      }
+      $tech_specs .= '<tr class="table_head"><th>ITEM CODE</th>'.$item_code.'</tr>';
+      $tech_specs .= '<tr><td>TYPE OF LAMP</td>'.$type_of_lamp.'</tr>';
+      $tech_specs .= '<tr><td>BASE</td>'.$base.'</tr>';
+      $tech_specs .= '<tr><td>RATED VOLTAGE</td>'.$rated_voltage.'</tr>';
+      $tech_specs .= '<tr><td>OPERATING VOLTAGE</td>'.$operating_voltage.'</tr>';
+      $tech_specs .= '<tr><td>FREQUENCY</td>'.$frequency.'</tr>';
+      $tech_specs .= '<tr><td>WATTAGE</td>'.$wattage.'</tr>';
+      $tech_specs .= '<tr><td>CURRENT</td>'.$current.'</tr>	';		
+      $tech_specs .= '<tr><td>LUMINOUS FLUX</td>'.$luminous_flux.'</tr>';
+      $tech_specs .= '<tr><td>CCT</td>'.$cct.'</tr>';
+      $tech_specs .= '<tr><td>LIFE</td>'.$life.'</tr>';
+      $tech_specs .= '<tr><td>DIMMING</td>'.$dimming.'</tr>';
+      $tech_specs .= '<tr class="prices"><td>MRP (in Rs.)</td>'.$sell_price.'</tr>';
+      
+    } elseif($parent_tid == 32 || $parent_tid == 33) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('uc_products', 'uc', 'uc.nid = n.nid');
+      $query->leftJoin('field_data_field_sub_category', 'sc', 'sc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_features', 'ffs', 'ffs.entity_id = n.nid');
+      $query->leftJoin('field_data_field_type_of_lamp', 'tol', 'tol.entity_id = n.nid');
+      $query->leftJoin('field_data_field_no_of_lamps', 'nol', 'nol.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_fitting_cap', 'ffc', 'ffc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_voltage', 'frv', 'frv.entity_id = n.nid');
+      $query->leftJoin('field_data_field_operating_voltage', 'fov', 'fov.entity_id = n.nid');
+      $query->leftJoin('field_data_field_frequency', 'ff', 'ff.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_wattage', 'frw', 'frw.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_total_wattage', 'tw', 'tw.entity_id = n.nid');
+      $query->leftJoin('field_data_field_cct', 'cct', 'cct.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_luminous_flux', 'lf', 'lf.entity_id = n.nid');
+      $query->leftJoin('taxonomy_term_data', 'ttd', 'ttd.tid = nol.field_no_of_lamps_tid');
+      $query->fields('n', array('nid', 'title', 'status', 'created'))
+            ->fields('ffs', array('field_features_value'))
+            ->fields('uc', array('model', 'sell_price'))
+            ->fields('sc', array('field_sub_category_tid'))
+            ->fields('tol', array('field_type_of_lamp_value'))
+            ->fields('ttd', array('name'))
+            ->fields('ffc', array('field_fitting_cap_value'))
+            ->fields('frv', array('field_rated_voltage_value'))
+            ->fields('fov', array('field_operating_voltage_value'))
+            ->fields('ff', array('field_frequency_value'))
+            ->fields('frw', array('field_rated_wattage_value'))
+            ->fields('tw', array('field_total_wattage_value'))
+            ->fields('cct', array('field_cct_value'))
+            ->fields('lf', array('field_luminous_flux_value'))
+            ->condition('n.status', 1, '=')
+            ->condition('sc.field_sub_category_tid', $tid, '=')
+            ->groupBy('n.nid')
+            ->orderBy('n.created', 'DESC');
+      $result = $query->execute();						
+      foreach($result as $row) {
+        $name = $row->title;
+        $price = number_format($row->sell_price, 2, '.', '');
+        $img = file_create_url($row->uri);
+        $features = $row->field_features_value;
+        $item_code .= '<th>'.$row->model.'</th>';
+        $sell_price .= '<td>'.number_format($row->sell_price, 2, '.', '').'</td>';
+        $type_of_lamp .= '<td>'.$row->field_type_of_lamp_value.'</td>';
+        $no_of_lamp .= '<td>'.$row->name.'</td>';
+        $fitting_cap .= '<td>'.$row->field_fitting_cap_value.'</td>';
+        $operating_voltage .= '<td>'.$row->field_operating_voltage_value.'</td>';
+        $rated_voltage .= '<td>'.$row->field_rated_voltage_value.'</td>';
+        $frequency .= '<td>'.$row->field_frequency_value.'</td>';
+        $rated_wattage .= '<td>'.$row->field_rated_wattage_value.'</td>';
+        $total_wattage .= '<td>'.$row->field_total_wattage_value.'</td>';
+        $cct .= '<td>'.$row->field_cct_value.'</td>';
+        $luminous_flux .= '<td>'.$row->field_luminous_flux_value.'</td>';
+      }
+      $tech_specs .= '<tr class="table_head"><th>ITEM CODE</th>'.$item_code.'</tr>';
+      $tech_specs .= '<tr><td>TYPE OF LAMP</td>'.$type_of_lamp.'</tr>';
+      $tech_specs .= '<tr><td>NO OF LAMP</td>'.$no_of_lamp.'</tr>';
+      $tech_specs .= '<tr><td>FITTING/CAP</td>'.$fitting_cap.'</tr>';
+      $tech_specs .= '<tr><td>RATED VOLTAGE</td>'.$rated_voltage.'</tr>';
+      $tech_specs .= '<tr><td>OPERATING VOLTAGE</td>'.$operating_voltage.'</tr>';
+      $tech_specs .= '<tr><td>FREQUENCY</td>'.$frequency.'</tr>';
+      $tech_specs .= '<tr><td>RATED WATTAGE</td>'.$rated_wattage.'</tr>';
+      $tech_specs .= '<tr><td>TOTAL WATTAGE</td>'.$total_wattage.'</tr>';
+      $tech_specs .= '<tr><td>CCT</td>'.$cct.'</tr>';								
+      $tech_specs .= '<tr><td>LUMINOUS FLUX</td>'.$luminous_flux.'</tr>';
+      $tech_specs .= '<tr class="prices"><td>MRP (in Rs.)</td>'.$sell_price.'</tr>';
+      
+    } elseif($parent_tid == 31) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('uc_products', 'uc', 'uc.nid = n.nid');
+      $query->leftJoin('field_data_field_features', 'ffs', 'ffs.entity_id = n.nid');
+      $query->leftJoin('field_data_field_sub_category', 'sc', 'sc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_type_of_lamp', 'tol', 'tol.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_voltage', 'frv', 'frv.entity_id = n.nid');
+      $query->leftJoin('field_data_field_operating_voltage', 'fov', 'fov.entity_id = n.nid');
+      $query->leftJoin('field_data_field_frequency', 'ff', 'ff.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_wattage', 'frw', 'frw.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_total_wattage', 'tw', 'tw.entity_id = n.nid');
+      $query->leftJoin('field_data_field_cct', 'cct', 'cct.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_luminous_flux', 'lf', 'lf.entity_id = n.nid');
+      $query->fields('n', array('nid', 'title', 'status', 'created'))
+            ->fields('uc', array('model', 'sell_price'))
+            ->fields('ffs', array('field_features_value'))
+            ->fields('sc', array('field_sub_category_tid'))
+            ->fields('tol', array('field_type_of_lamp_value'))
+            ->fields('frv', array('field_rated_voltage_value'))
+            ->fields('fov', array('field_operating_voltage_value'))
+            ->fields('ff', array('field_frequency_value'))
+            ->fields('frw', array('field_rated_wattage_value'))
+            ->fields('tw', array('field_total_wattage_value'))
+            ->fields('cct', array('field_cct_value'))
+            ->fields('lf', array('field_luminous_flux_value'))
+            ->condition('n.status', 1, '=')
+            ->condition('sc.field_sub_category_tid', $tid, '=')
+            ->groupBy('n.nid')
+            ->orderBy('n.created', 'DESC');
+      $result = $query->execute();						
+      foreach($result as $row) {
+        $name = $row->title;
+        $img = file_create_url($row->uri);
+        $features = $row->field_features_value;
+        $item_code .= '<th>'.$row->model.'</th>';
+        $sell_price .= '<td>'.number_format($row->sell_price, 2, '.', '').'</td>';
+        $type_of_lamp .= '<td>'.$row->field_type_of_lamp_value.'</td>';
+        $operating_voltage .= '<td>'.$row->field_operating_voltage_value.'</td>';
+        $rated_voltage .= '<td>'.$row->field_rated_voltage_value.'</td>';
+        $frequency .= '<td>'.$row->field_frequency_value.'</td>';
+        $rated_wattage .= '<td>'.$row->field_rated_wattage_value.'</td>';
+        if($total_wattage == '') {
+          $total_wattage .= '<td>&nbsp;</td>';
+        } else {
+          $total_wattage .= '<td>'.$row->field_total_wattage_value.'</td>';
+        }
+        $cct .= '<td>'.$row->field_cct_value.'</td>';
+        $luminous_flux .= '<td>'.$row->field_luminous_flux_value.'</td>';
+      }
+      $tech_specs .= '<tr class="table_head"><th>ITEM CODE</th>'.$item_code.'</tr>';
+      $tech_specs .= '<tr><td>TYPE OF LAMP</td>'.$type_of_lamp.'</tr>';
+      $tech_specs .= '<tr><td>RATED VOLTAGE</td>'.$rated_voltage.'</tr>';
+      $tech_specs .= '<tr><td>OPERATING VOLTAGE</td>'.$operating_voltage.'</tr>';
+      $tech_specs .= '<tr><td>FREQUENCY</td>'.$frequency.'</tr>';
+      $tech_specs .= '<tr><td>RATED WATTAGE</td>'.$rated_wattage.'</tr>';
+      $tech_specs .= '<tr><td>TOTAL WATTAGE</td>'.$total_wattage.'</tr>';
+      $tech_specs .= '<tr><td>CCT</td>'.$cct.'</tr>';
+      $tech_specs .= '<tr><td>LUMINOUS FLUX</td>'.$luminous_flux.'</tr>';
+      $tech_specs .= '<tr class="prices"><td>MRP (in Rs.)</td>'.$sell_price.'</tr>';
+      
+    } elseif($parent_tid == 30) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('uc_products', 'uc', 'uc.nid = n.nid');
+      $query->leftJoin('field_data_field_features', 'ffs', 'ffs.entity_id = n.nid');
+      $query->leftJoin('field_data_field_sub_category', 'sc', 'sc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_type_of_lamp', 'tol', 'tol.entity_id = n.nid');
+      $query->leftJoin('field_data_field_no_of_lamps', 'nol', 'nol.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_fitting_cap', 'ffc', 'ffc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_voltage', 'frv', 'frv.entity_id = n.nid');
+      $query->leftJoin('field_data_field_operating_voltage', 'fov', 'fov.entity_id = n.nid');
+      $query->leftJoin('field_data_field_frequency', 'ff', 'ff.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_wattage', 'frw', 'frw.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_total_wattage', 'tw', 'tw.entity_id = n.nid');
+      $query->leftJoin('taxonomy_term_data', 'ttd', 'ttd.tid = nol.field_no_of_lamps_tid');
+      $query->fields('n', array('nid', 'title', 'status', 'created'))
+            ->fields('uc', array('model', 'sell_price'))
+            ->fields('ffs', array('field_features_value'))
+            ->fields('sc', array('field_sub_category_tid'))
+            ->fields('tol', array('field_type_of_lamp_value'))
+            ->fields('ttd', array('name'))
+            ->fields('ffc', array('field_fitting_cap_value'))
+            ->fields('frv', array('field_rated_voltage_value'))
+            ->fields('fov', array('field_operating_voltage_value'))
+            ->fields('ff', array('field_frequency_value'))
+            ->fields('frw', array('field_rated_wattage_value'))
+            ->fields('tw', array('field_total_wattage_value'))
+            ->condition('n.status', 1, '=')
+            ->condition('sc.field_sub_category_tid', $tid, '=')
+            ->groupBy('n.nid')
+            ->orderBy('n.created', 'DESC');
+      $result = $query->execute();	
+      foreach($result as $row) {
+        $name = $row->title;
+        $img = file_create_url($row->uri);
+        $features = $row->field_features_value;
+        $item_code .= '<th>'.$row->model.'</th>';
+        $sell_price .= '<td>'.number_format($row->sell_price, 2, '.', '').'</td>';
+        $type_of_lamp .= '<td>'.$row->field_type_of_lamp_value.'</td>';
+        if($no_of_lamp == '') {
+          $no_of_lamp .= '<td>&nbsp;</td>';
+        } else {
+          $no_of_lamp .= '<td>'.$row->name.'</td>';
+        }
+        $fitting_cap .= '<td>'.$row->field_fitting_cap_value.'</td>';
+        $operating_voltage .= '<td>'.$row->field_operating_voltage_value.'</td>';
+        $rated_voltage .= '<td>'.$row->field_rated_voltage_value.'</td>';
+        $frequency .= '<td>'.$row->field_frequency_value.'</td>';
+        $rated_wattage .= '<td>'.$row->field_rated_wattage_value.'</td>';
+        $total_wattage .= '<td>'.$row->field_total_wattage_value.'</td>';
+      }
+      $tech_specs .= '<tr class="table_head"><th>ITEM CODE</th>'.$item_code.'</tr>';
+      $tech_specs .= '<tr><td>TYPE OF LAMP</td>'.$type_of_lamp.'</tr>';
+      $tech_specs .= '<tr><td>NO OF LAMP</td>'.$no_of_lamp.'</tr>';
+      $tech_specs .= '<tr><td>FITTING/CAP</td>'.$fitting_cap.'</tr>';
+      $tech_specs .= '<tr><td>RATED VOLTAGE</td>'.$rated_voltage.'</tr>';
+      $tech_specs .= '<tr><td>OPERATING VOLTAGE</td>'.$operating_voltage.'</tr>';
+      $tech_specs .= '<tr><td>FREQUENCY</td>'.$frequency.'</tr>';
+      $tech_specs .= '<tr><td>RATED WATTAGE</td>'.$rated_wattage.'</tr>';
+      $tech_specs .= '<tr><td>TOTAL WATTAGE</td>'.$total_wattage.'</tr>';
+      $tech_specs .= '<tr class="prices"><td>MRP (in Rs.)</td>'.$sell_price.'</tr>';
+      
+    } elseif($parent_tid == 28) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('uc_products', 'uc', 'uc.nid = n.nid');
+      $query->leftJoin('field_data_field_features', 'ffs', 'ffs.entity_id = n.nid');
+      $query->leftJoin('field_data_field_sub_category', 'sc', 'sc.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_wattage', 'frw', 'frw.entity_id = n.nid');
+      $query->leftJoin('field_data_field_type_of_lamp', 'tol', 'tol.entity_id = n.nid');
+      $query->leftJoin('field_data_field_capsule_type', 'ct', 'ct.entity_id = n.nid');
+      $query->leftJoin('field_data_field_base', 'b', 'b.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_voltage', 'frv', 'frv.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_frequency', 'ff', 'ff.entity_id = n.nid');
+      $query->leftJoin('field_data_field_cct', 'cct', 'cct.entity_id = n.nid');
+      $query->leftJoin('field_data_field_power_factor ', 'pf', 'pf.entity_id = n.nid');
+      $query->leftJoin('field_data_field_rated_luminous_flux', 'rlf', 'rlf.entity_id = n.nid');
+      $query->leftJoin('field_data_field_maximum_length_in_mm_', 'mm', 'mm.entity_id = n.nid');
+      $query->fields('n', array('nid', 'title', 'status', 'created'))
+            ->fields('uc', array('model', 'sell_price'))
+            ->fields('ffs', array('field_features_value'))
+            ->fields('sc', array('field_sub_category_tid'))
+            ->fields('frw', array('field_rated_wattage_value'))
+            ->fields('tol', array('field_type_of_lamp_value'))
+            ->fields('ct', array('field_capsule_type_value'))
+            ->fields('b', array('field_base_value'))
+            ->fields('frv', array('field_rated_voltage_value'))
+            ->fields('ff', array('field_rated_frequency_value'))
+            ->fields('cct', array('field_cct_value'))
+            ->fields('pf', array('field_power_factor_value'))
+            ->fields('rlf', array('field_rated_luminous_flux_value'))
+            ->fields('mm', array('field_maximum_length_in_mm__value'))
+            ->condition('n.status', 1, '=')
+            ->condition('sc.field_sub_category_tid', $tid, '=')
+            ->groupBy('n.nid')
+            ->orderBy('n.created', 'DESC');
+      $result = $query->execute();
+      foreach($result as $row) {
+        $item_code .= '<th>'.$row->model.'</th>';
+        $sell_price .= '<td>'.number_format($row->sell_price, 2, '.', '').'</td>';
+        $rated_wattage .= '<td>'.$row->field_capsule_type_value.'</td>';
+        $type_of_lamp .= '<td>'.$row->field_type_of_lamp_value.'</td>';
+        $capsule_tpye .= '<td>'.$row->field_capsule_type_value.'</td>';
+        $base .= '<td>'.$row->field_base_value.'</td>';
+        $rated_voltage .= '<td>'.$row->field_rated_voltage_value.'</td>';
+        $frequency .= '<td>'.$row->field_rated_frequency_value.'</td>';
+        $cct .= '<td>'.$row->field_cct_value.'</td>';
+        $power_factor .= '<td>'.$row->field_power_factor_value.'</td>';
+        $rated_luminous_flux .= '<td>'.$row->field_rated_luminous_flux_value.'</td>';
+        $max_length .= '<td>'.$row->field_maximum_length_in_mm__value.'</td>';
+      }
+    } 
+
+		$data = array(
+			'name' 				=> $name,
+			'model' 			=> $model,
+			'price' 			=> $price,
+			'image'       => $img,
+			'features' 		=> $features,
+			'tech_specs' 	=> $tech_specs,
+			
+		);
+		echo json_encode($data);
+	}
+  
+  function get_products_ajax() {
+    $feature = '';
+    $tech_spec = '';
+    $suit_li = '';
+    $nid = $_POST['nid'];
+    $query = new EntityFieldQuery();
+		$entities = $query->entityCondition('entity_type', 'node')
+			->propertyCondition('nid', $nid)
+			->propertyCondition('status', 1)
+			->execute();
+
+		if (!empty($entities['node'])) {
+			$node = node_load(array_shift(array_keys($entities['node'])));
+		}
+    //echo '<pre>';
+    //print_r($node);
+    //echo '</pre>';
+    //exit;
+    $title = $node->title;
+    $model = $node->model;
+    $price = number_format($node->list_price, 2, '.', '');
+    $desc = $node->body['und'][0]['value'];
+    $image_uri = $node->uc_product_image['und'][0]['uri'];
+		$image_path = file_create_url($image_uri);
+    $material = $node->field_material['und'][0]['value'];
+		$color = $node->field_color['und'][0]['value'];
+		$installation = $node->field_installation['und'][0]['value'];
+		$features = $node->field_features['und'][0]['value'];
+		$tech_specs = $node->field_techincal_spec['und'][0]['value'];
+		$spec_img = file_create_url($node->field_specification_image['und'][0]['uri']);
+    
+    foreach($node->field_spaces_applicable['und'] as $suit) {
+      $suitable_for_tid = $suit['tid'];
+      $result = db_query("SELECT name FROM {taxonomy_term_data} WHERE tid = :arg", array(':arg' => $suitable_for_tid));
+      $result = $result->fetchAssoc();
+      $suitable_for = $result['name'];
+      $suit_image = base_path().'sites/default/files/'.strtolower($suitable_for).'.png';
+      $suit_li .= '<li><span><img src="'.$suit_image.'" alt=""></span><span>'.$suitable_for.'</span></li>';
+    }
+
+    $body = $desc. '<a class="readMore" href="javascript:;">Read More</a><p class="mrp">MRP: <span class="rupees">`</span>'.$price.'</p>';
+    $feature .= '<ul><li>Material<br>'.$material.'</li><li>Color<br>'.$color.'</li><li>Installation<br>'.$installation.'</li>'.strip_tags($features, "<li>").'</ul>';
+		$feature .= '<p class="title">Suitable for</p><ul class="suitableFor">'.$suit_li.'</ul>';
+		
+ 
+		$tech_spec .= '<p class="title">The Specifications</p>';
+		if(!empty($node->field_specification_image)) {
+			$tech_spec .= '<div class="imgBox"><img src="'.$spec_img.'" alt=""></div>';
+		}
+		$tech_spec .= str_replace('<ul', '<ul class="specifications"', $tech_specs);
+
+    $data = array (
+              'nid'   => $nid,
+              'title' => $title,
+              'model' => $model,
+              'body' => $body,
+              'image' => $image_path,
+              'features' => $feature,
+              'tech_specs' => $tech_spec,
+    );
+    echo json_encode($data);
+  }
+  
+  function load_more_products_ajax() {
+    $output = '';
+		$last_nid = '';
+    $temp = explode('-', $_POST['tnid']);
+    $tid = $temp[0];
+    $nid = $temp[1];
+    $vid = $temp[2];
+    if($vid == 3) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('field_revision_taxonomy_catalog', 'rtc', 'rtc.entity_id = n.nid');
+      $query->leftJoin('field_revision_field_featured_image', 'upi', 'upi.entity_id = n.nid');
+      $query->leftJoin('file_managed', 'fm', 'fm.fid = upi.field_featured_image_fid');
+      $query->fields('n', array('nid', 'title', 'created', 'status', 'type'))
+            ->fields('fm', array('uri'))
+            ->condition('n.type', array('product'), 'IN')
+            ->condition('n.status', '1', '=')
+            ->condition('rtc.taxonomy_catalog_tid', $tid, '=')
+            ->condition('n.nid', $nid, '<')
+            ->groupBy('n.nid')
+            ->orderBy('n.created', 'DESC')
+            ->range(0,6);
+      $result = $query->execute();
+    }
+    if($vid == 6) {
+      $query = db_select('node', 'n');
+      $query->leftJoin('field_data_field_spaces_applicable', 'fsa', 'fsa.entity_id = n.nid');
+      $query->leftJoin('field_data_uc_product_image', 'upi', 'upi.entity_id = n.nid');
+      $query->leftJoin('file_managed', 'fm', 'fm.fid = upi.uc_product_image_fid');
+      $query->fields('n', array('nid', 'title', 'created', 'status', 'type'))
+              ->fields('fm', array('uri'))
+              ->condition('n.type', array('product'), 'IN')
+              ->condition('n.status', '1', '=')
+              ->condition('fsa.field_spaces_applicable_tid', $tid, '=')
+              ->condition('n.nid', $nid, '<')
+              ->orderBy('n.created', 'DESC')
+              ->range(0,6);
+      $result = $query->execute();
+    }
+    
+    foreach($result as $row) {
+			$temp = explode(' - ', $row->title);
+			$title = $temp[0];
+      $img_path = file_create_url($row->uri);
+      $path = drupal_get_path_alias('node/'.$row->nid);
+      $output .= '<div class="prod_thumb" rel="'.$tid.'-'.$row->nid.'-'.$vid.'">';
+      $output .= '<a href="'.$path.'">';
+      $output .= '<span class="prod_img"><img src="'.image_style_url("uc_product",$row->uri).'" alt="'.$row->title.'"></span>';
+      $output .= '<span class="prod_title">'.$title.'</span></a></div>';
+			$last_nid = $row->nid;
+    }
+    if($vid == 3) {
+			$qry = "SELECT * FROM node n JOIN field_revision_taxonomy_catalog rtc ON rtc.entity_id = n.nid WHERE rtc.taxonomy_catalog_tid=". $tid ." AND n.nid <". $last_nid. " LIMIT 1";
+		} elseif($vid == 6) {
+			$qry = "SELECT * FROM node n JOIN field_data_field_spaces_applicable fsa ON fsa.entity_id = n.nid WHERE fsa.field_spaces_applicable_tid=". $tid ." AND n.nid <". $last_nid . " LIMIT 1";
+		}
+    $qry_res = db_query($qry);
+		$res = $qry_res->fetchAssoc();
+		if($res) {
+			$load_more = 1;
+		} else {
+			$load_more = 0;
+		}
+		
+		echo json_encode(array('output' => $output, 'load_more' => $load_more));
+  }
+	
+	
+	function tisva_mobile_custom_pages_form_node_admin_content_alter(&$form, &$form_state, $form_id) {
+    $form['filter_sku'] = array(
+      '#type' => 'checkbox',
+      '#title' => t("Filter By Item Code."),
+      '#id' => 'filter_sku',
+    );
+    $form['title'] = array(
+      '#type' => 'textfield',
+      '#size' => 60,
+      '#maxlength' => 128,
+      '#id' => 'filter_sku_text',
+    );
+    //$form['submit_sku'] = array(
+    //  '#type' => 'button',
+    //  '#value' => t('Go'),
+    //  '#id' => 'submit_sku',
+    //);
+    $form['from'] = array(
+      '#type' => 'item',
+      '#prefix' => '<a href="javascript:;" class="submit_sku form-submit">Go<a>'
+    );
+  }
+	
+	function edit_product_details() {
+    $output = '';
+    $sku = $_POST['psku'];
+    $qry = db_select('node', 'n');
+      $qry->join('uc_products', 'ucp', 'ucp.nid = n.nid');
+      $qry->join('users', 'u', 'u.uid = n.uid');
+      $qry->condition('n.type', array('product'), 'IN')
+          ->condition('ucp.model', $sku, '=')
+          ->fields('n', array('nid', 'uid', 'title', 'changed', 'type'))
+          ->fields('u', array('name'));
+      //print_r($qry->__toString());
+    $res = $qry->execute();
+    if($row = $res->fetchAssoc()) {
+      $output .= '<tbody><tr class="odd"><td><div class="form-item form-type-checkbox form-item-nodes-'.$row['nid'].'">';
+      $output .= '<label class="element-invisible" for="edit-nodes-'.$row['nid'].'">'.$row['title'].'</label>';
+      $output .= '<input type="checkbox" id="edit-nodes-'.$row['nid'].'" name="nodes['.$row['nid'].']" value="'.$row['nid'].'" class="form-checkbox"></div></td>';
+      $output .= '<td><a href="'.base_path().'node/'.$row['nid'].'">'.$row['title'].'</a> </td>';
+      $output .= '<td>'. $row['type'] .'</td>';
+      $output .= '<td><a href="'.base_path().'user/'.$row['uid'].'" title="View user profile." class="username" xml:lang="" about="'.base_path().'user/1" typeof="sioc:UserAccount" property="foaf:name" datatype="">'.$row['name'].'</a></td><td>published</td>';
+      $output .= '<td>'. gmdate("m/d/Y - H:i", $row['changed']). '</td>';
+      $output .= '<td><ul class="links inline"><li class="edit first"><a href="'.base_path().'node/'.$row['nid'].'/edit?destination=admin/content">edit</a></li>';
+      $output .= '<li class="delete last"><a href="'.base_path().'node/'.$row['nid'].'/delete?destination=admin/content">delete</a></li></ul></td> </tr></tbody>';
+    } else {
+      $output .= 'No Products found for the specified SKU';
+    }
+    echo $output;
+  }
+
